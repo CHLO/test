@@ -1,0 +1,1752 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head><script language="javascript" type="text/javascript">
+	function buildDepth(iterations)
+		{
+			var iterations=iterations-3;
+			var depthStr="";
+			for (i=0;i<iterations;i++)
+			{
+				depthStr=depthStr + "../";
+			}
+			return depthStr;
+		}
+	function buildBreadCrumbTrail()
+		{
+			var constituentFolders = new Array();
+			var currentURL = document.location.toString();
+			constituentFolders=currentURL.split("/");
+			var outputStr="";
+			for (count=2;count<(constituentFolders.length-1);count++)
+			{
+				outputStr=outputStr + " : <a href='" + buildDepth((constituentFolders.length-count)+1) + "index.html' title='parent folder'>" + constituentFolders[count] + "</a>";
+			}
+			document.write(outputStr);
+		}
+
+function toggle_visibility(id) { 
+  var e = document.getElementById(id); 
+  if(e.style.display == 'none') e.style.display = 'block'; 
+  else e.style.display = 'none'; 
+}
+function show_onlys(id) { 
+  var e = document.getElementsByTagName(thistag);
+    for(i=0;i<ele.length;i++){
+        var divelement = e[i];
+        if(divelement.getAttribute("class") == thisclass) divelement.style.display = 'inline';
+        else divelement.style.display = 'none';
+    }
+}</script>
+<style>
+body 	{background: #fff; font-size :12px; color: #000000; font-family: calibri;}  /*arial, helvetica, verdana, sans-serif;*/
+a 	{color:#00f;text-decoration:none;}
+xa 	{color:#00f;background-color:#fff;text-decoration:none;font-weight:normal;margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px;} /*top right bottom left*/
+a:hover 	{color:#fff;background-color:#00c;}
+a:active 	{color:#00f;}
+a:visited	{color:#00f;}
+
+ul, li {list-style: circle;}
+ul li , ul li a {font-weight: normal;}
+ul li a {font-weight: bold;}
+ul li ul li a {font-weight: normal;}
+ul li ul li ul li{list-style: disc;}
+
+h1 	{font-size: 120%em; font-style: normal; font-weight: bold; text-transform: capitalize; color: #0066CC; margin-top: 0px;    margin-right: 0px;    margin-bottom: 0px;    margin-left: 0px;}
+h2 	{font-size: 100%; font-style: normal; font-weight: bold; text-transform: capitalize; color: #0066CC; margin-top: 0px;    margin-right: 0px;    margin-bottom: 0px;    margin-left: 0px;}   
+h3 	{font-size: 100%; font-style: normal; font-weight: bold; text-transform: capitalize; color: #0066CC; margin-top: 0px;    margin-right: 0px;    margin-bottom: 0px;    margin-left: 0px;}
+h4	{font-size: 100%; font-style: normal; font-weight: bold; text-transform: capitalize; color: #996600; margin-top: 0px;    margin-right: 0px;    margin-bottom: 0px;    margin-left: 0px;}
+h5 	{font-size: 100%; font-style: normal; font-weight: bold; text-transform: capitalize; color: #006699; margin-top: 0px;    margin-right: 0px;    margin-bottom: 0px;    margin-left: 0px;}
+h6 	{font-size: 100%; font-style: normal; font-weight: bold; text-transform: capitalize; color: #006699;    margin-top: 1px;    margin-right: 0px;    margin-bottom: 0px;    margin-left: 0px;}    
+td { font-size: 80%; font-family: arial, helvetica, verdana, sans-serif; }
+img { border-style: none; }
+
+div.x {width:200px;
+height:400px;
+background-color: yellow;
+/* Rotate div */
+    
+-ms-transform: rotate( 4deg); /* IE 9 */
+    
+-webkit-transform: rotate(30deg); /* Chrome, Safari, Opera */
+    
+transform: rotate(30deg); /* Standard syntax */
+
+}
+
+
+.button {
+	display: inline-block;
+	zoom: 1; /* zoom and *display = ie7 hack for display:inline-block */
+	*display: inline;
+	vertical-align: baseline;
+	margin: 0 2px;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	font: 14px/100% Arial, Helvetica, sans-serif;
+	padding: .5em 2em .55em;
+	text-shadow: 0 1px 1px rgba(0,0,0,.3);
+	-webkit-border-radius: .5em; 
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+.button:hover {text-decoration: none;}
+.button:active {position: relative;top: 1px;}
+.bigrounded {-webkit-border-radius: 2em; -moz-border-radius: 2em; border-radius: 2em;}
+.medium {font-size: 12px;padding: .4em 1.5em .42em;}
+.small {font-size: 11px;padding: .2em 1em .275em;}
+
+/* white */
+	.white {color: #77f; border: solid 1px #b7b7b7; background: #fff; background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ededed)); 
+	background: -moz-linear-gradient(top,  #fff,  #ededed); filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed');}
+	.white a:hover {color:#77f;}
+	.white a:active{color:#77f;}
+	.white a:visited{color:#77f;}
+	.white:hover { background: #ededed; background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#dcdcdc)); 
+	background: -moz-linear-gradient(top,  #fff,  #dcdcdc); filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#dcdcdc'); }
+	.white:active {color: #999; background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#fff)); background: -moz-linear-gradient(top,  #ededed,  #fff);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#ffffff');}
+/* blue */
+	.blue {color: #d9eef7; border: solid 1px #0076a3; background: #0095cd; background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
+	background: -moz-linear-gradient(top,  #00adee,  #0078a5); filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#00adee', endColorstr='#0078a5');}
+	.blue:hover { background: #007ead; 	background: -webkit-gradient(linear, left top, left bottom, from(#0095cc), to(#00678e)); 
+	background: -moz-linear-gradient(top,  #0095cc,  #00678e); filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#0095cc', endColorstr='#00678e'); }
+	.blue:active { color: #80bed6;  background: -webkit-gradient(linear, left top, left bottom, from(#0078a5), to(#00adee)); 
+	background: -moz-linear-gradient(top,  #0078a5,  #00adee);filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#0078a5', endColorstr='#00adee'); }
+/* red */
+	.red { color: #0030; border: solid 1px #a30076; background: #cd0095; background: -webkit-gradient(linear, left top, left bottom, from(#ee00ad), to(#a50078));
+	background: -moz-linear-gradient(top,  #ee00ad,  #a50078); filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ee00ad', endColorstr='#a50078'); }
+	.red:hover { background: #ad007e; background: -webkit-gradient(linear, left top, left bottom, from(#cc0095), to(#8e0067)); 
+	background: -moz-linear-gradient(top,  #cc0095,  #8e0067); filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#cc0095', endColorstr='#8e0067'); }
+	.red:active { color: #d680be; background: -webkit-gradient(linear, left top, left bottom, from(#a50078), to(#ee00ad)); 	
+	background: -moz-linear-gradient(top,  #a50078,  #ee00ad);filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#a50078', endColorstr='#ee00ad');}
+/* green */
+	.green { color: #d9f7ee; border: solid 1px #00a376; background: #00cd95; background: -webkit-gradient(linear, left top, left bottom, from(#00eead), to(#00a578));
+	background: -moz-linear-gradient(top,  #00eead,  #00a578); filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#00eead', endColorstr='#00a578'); }
+.green:hover { background: #00ad7e; background: -webkit-gradient(linear, left top, left bottom, from(#00cc95), to(#008e67)); 
+	background: -moz-linear-gradient(top,  #00cc95,  #008e67); filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#00cc95', endColorstr='#008e67'); }
+.green:active { color: #80d6be; background: -webkit-gradient(linear, left top, left bottom, from(#00a578), to(#00eead)); 
+	background: -moz-linear-gradient(top,  #00a578,  #00eead); filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#00a578', endColorstr='#00eead'); }
+/* purple */
+	.purple { color: #eed9f7; border: solid 1px #00a376; background: #9500cd; background: -webkit-gradient(linear, left top, left bottom, from(#ad00ee), to(#7800a5));
+	background: -moz-linear-gradient(top,  #ad00ee,  #7800a5); filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ad00ee', endColorstr='#7800a5'); }
+.purple:hover { background: #7e00ad; background: -webkit-gradient(linear, left top, left bottom, from(#9500cc), to(#67008e)); 
+	background: -moz-linear-gradient(top,  #9500cc,  #67008e); filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#9500cc', endColorstr='#67008e'); }
+.purple:active { color: #be80d6; background: -webkit-gradient(linear, left top, left bottom, from(#7800a5), to(#ad00ee)); 
+	background: -moz-linear-gradient(top,  #7800a5,  #ad00ee); filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#7800a5', endColorstr='#ad00ee'); }
+/* yellow */
+	.yellow { color: #eed9f7; border: solid 1px #00a376; background: #95cd00; background: -webkit-gradient(linear, left top, left bottom, from(#ad00ee), to(#78a500));
+	background: -moz-linear-gradient(top,  #ad00ee,  #78a500); filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#adee00', endColorstr='#78a500'); }
+	.yellow:hover { background: #7ead00; background: -webkit-gradient(linear, left top, left bottom, from(#95cc00), to(#678e00)); 
+	background: -moz-linear-gradient(top,  #95cc00,  #678e00); filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#95cc00', endColorstr='#678e00'); }
+	.yellow:active { color: #be80d6; background: -webkit-gradient(linear, left top, left bottom, from(#78a500), to(#adee00)); 
+	background: -moz-linear-gradient(top,  #78a500,  #adee00); filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#78a500', endColorstr='#adee00'); }
+
+
+
+/* Pure css trees*/
+.clt, .clt ul, .clt li {list-style: none; position: relative; }
+.clt ul { list-style: none;    padding-left:16px;}
+.clt li::before, .clt li::after { content: ""; position: absolute; left: -12px; }
+.clt li::before { border-top: 1px solid #000;  top: 10px; width: 8px; height: 0; }
+.clt li::after { border-left: 1px solid #000;  height: 100%;  width: 0px; top: 2px; }
+.clt ul > li:last-child::after { height: 8px; }a.header {color:#07f; background-color:#fff; text-decoration:none;font-weight:bold;font-style:normal;margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px;}
+a.folder {color:#07f; background-color:#fff; text-decoration:none;font-weight:normal;font-style:italic;margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px;}
+a.lineitem {color:#07f; background-color:#fff; text-decoration:none;font-weight:normal;font-style:normal;margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px;}</style>
+</head>
+<body>
+<ul><div id="">
+<DIV>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15801652" class="folder"  title="GCDocs New structure
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15801652
+46
+Org
+"> GCDocs New structure (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16705131" class="folder"  title="Architecture and Implementation
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16705131
+47
+Org
+"> Architecture and Implementation (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16149914" class="folder"  title="Enterprise Information Reporting and Analytics (EIRA) 
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16149914
+48
+Org,EIRA
+"> Enterprise Information Reporting and Analytics (EIRA)  (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16036078" class="folder"  title="FMT Organizational Change Management & Communications
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16036078
+49
+Org
+"> FMT Organizational Change Management & Communications (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15801655" class="folder"  title="Governance
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15801655
+50
+Org
+"> Governance (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16102414" class="folder"  title="Grants & Contributions
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16102414
+51
+Org
+"> Grants & Contributions (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16754053" class="folder"  title="Investment Alignment 
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16754053
+52
+Org
+"> Investment Alignment  (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16027007" class="folder"  title="Program Management Office (PMO)
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16027007
+53
+Org
+"> Program Management Office (PMO) (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15801656" class="folder"  title="SAP (SAP is SAP)
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15801656
+54
+Org, SAP
+"> SAP (SAP is SAP) (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15801654" class="folder"  title="Studies Consultations
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15801654
+55
+Repo
+"> Studies Consultations (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/8086021" class="folder"  title="Receiver General
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/8086021
+56
+AsIs
+"> Receiver General (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/13635119" class="folder"  title="Cluster Related
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/13635119
+57
+AsIs
+"> Cluster Related (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11134911" class="folder"  title="Info Source
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11134911
+58
+AsIs
+"> Info Source (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/922787" class="folder"  title="CIOB Related Information
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/922787
+59
+AsIs
+"> CIOB Related Information (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/6388622" class="folder"  title="Solution Build V2
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/6388622
+60
+ToBe
+"> Solution Build V2 (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/13083103" class="folder"  title="FMT Business Case - Program level
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/13083103
+61
+ToBe
+"> FMT Business Case - Program level (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11467190" class="folder"  title="Enterprise Service Delivery
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11467190
+62
+WorkStreams
+"> Enterprise Service Delivery (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/12386766" class="folder"  title="Enterprise Solution
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/12386766
+63
+WorkStreams
+"> Enterprise Solution (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/14107869" class="folder"  title="Enterprise Information Reporting and Analytics
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/14107869
+64
+WorkStreams,EIRA
+"> Enterprise Information Reporting and Analytics (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15747819" class="lineitem"  title="Back Office Transformation Interoperability Project - Project Charter
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15747819
+65
+DR
+"> Back Office Transformation Interoperability Project - Project Charter (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16103310" class="lineitem"  title="FMT DR - 68 - Architecture and Engineering Environment - Detail Report.docx 
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16103310
+66
+DR
+"> FMT DR - 68 - Architecture and Engineering Environment - Detail Report.docx  (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16100411" class="lineitem"  title="FMT DR - 68 -Architecture Tools 2015-05-21 v2.docx
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16100411
+67
+DR
+"> FMT DR - 68 -Architecture Tools 2015-05-21 v2.docx (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16175626" class="lineitem"  title="Signed Record of Decision DR-68
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16175626
+68
+DR, Decision
+"> Signed Record of Decision DR-68 (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/14913841" class="lineitem"  title="IBM Rational Webinars
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/14913841
+69
+Deliv, MODEL
+"> IBM Rational Webinars (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/14927385" class="lineitem"  title="Repository of Requirements
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/14927385
+70
+Deliv, MODEL
+"> Repository of Requirements (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15139620" class="lineitem"  title="SSI Back-Up 2015-03-30
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15139620
+71
+MODEL
+"> SSI Back-Up 2015-03-30 (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/12409976" class="lineitem"  title="CECM Deliverables
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/12409976
+72
+ESCD,  MODEL
+"> CECM Deliverables (gcdocs) </a></li>
+<li><a  onclick="toggle_visibility('Div1')"  class="header"  title="Reference
+
+73
+Deliv
+"> Reference</a><a > (Other) </a>
+<ul><div id="Div1">
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/14022733" class="lineitem"  title="Program Management Plan
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/14022733
+74
+Deliv, PMP
+"> Program Management Plan (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11717761" class="lineitem"  title="FMT Architecture v1.0
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11717761
+75
+Deliv, ADS
+"> FMT Architecture v1.0 (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/8179836" class="lineitem"  title="Architecture and Implementation Management Plan (20140529)
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/8179836
+76
+Deliv,plan
+"> Architecture and Implementation Management Plan (20140529) (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/12336560" class="lineitem"  title="List of acronyms used in FMT
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/12336560
+77
+Deliv, ref
+"> List of acronyms used in FMT (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15364359" class="lineitem"  title="Architecture Design Specification Map
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15364359
+78
+Deliv, Map
+"> Architecture Design Specification Map (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15646403" class="lineitem"  title="TA 24062-12-226-022 Business Architecture Planning and Engagement Report
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15646403
+79
+Deliv,TA
+"> TA 24062-12-226-022 Business Architecture Planning and Engagement Report (gcdocs) </a></li>
+</div></ul></li>
+<li><a  onclick="toggle_visibility('Div2')"  class="header"  title="FMT Instrument Map, Program Charter, and 3-Year Program Plan Materials
+
+80
+Deliv
+"> FMT Instrument Map, Program Charter, and 3-Year Program Plan Materials</a><a > (Other) </a>
+<ul><div id="Div2">
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/13024337" class="lineitem"  title="FMT Document/ Instrument Map 
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/13024337
+81
+Deliv, Map
+"> FMT Document/ Instrument Map  (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/13941217" class="lineitem"  title="FMT Program Charter (Strategy)
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/13941217
+82
+Deliv, Charter
+"> FMT Program Charter (Strategy) (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/13938797" class="lineitem"  title="FMT Program Plan - 3-Year Cost Breakdown 
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/13938797
+83
+Deliv, Plan
+"> FMT Program Plan - 3-Year Cost Breakdown  (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/13926650" class="lineitem"  title="FMT Program Plan 1-year Timeline 
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/13926650
+84
+Deliv, Plan
+"> FMT Program Plan 1-year Timeline  (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/13934442" class="lineitem"  title="Cost Estimate Summary 
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/13934442
+85
+Deliv, Plan, Cost
+"> Cost Estimate Summary  (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/13759402" class="lineitem"  title="FMT Program Plan - narrative and notes 
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/13759402
+86
+Deliv, Plan
+"> FMT Program Plan - narrative and notes  (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/13767156" class="lineitem"  title="FMT Program-Level Plan - Constrained to PSMAC Guidance 
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/13767156
+87
+Deliv, Plan
+"> FMT Program-Level Plan - Constrained to PSMAC Guidance  (gcdocs) </a></li>
+</div></ul></li>
+<li><a  onclick="toggle_visibility('Div3')"  class="header"  title="Contract Deliverables
+
+88
+Deliv
+"> Contract Deliverables</a><a > (Other) </a>
+<ul><div id="Div3">
+</div></ul></li>
+<li><a  onclick="toggle_visibility('Div4')"  class="header"  title="Delverables by Stephen
+
+89
+Deliv
+"> Delverables by Stephen</a><a > (Other) </a>
+<ul><div id="Div4">
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15646403" class="lineitem"  title="TA 24062-12-226-022 Business Architecture Planning and Engagement Report
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15646403
+90
+Deliv, steph, Model,TA
+"> TA 24062-12-226-022 Business Architecture Planning and Engagement Report (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15263331" class="lineitem"  title="Business Architecture Activity Framework
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15263331
+91
+Deliv, steph, BA, Model
+"> Business Architecture Activity Framework (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15005888" class="lineitem"  title="Business Motivation Model
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15005888
+92
+Deliv, steph, BA, Model
+"> Business Motivation Model (gcdocs) </a></li>
+</div></ul></li>
+<li><a  onclick="toggle_visibility('Div5')"  class="header"  title="Deliverables by Kevin - Release 20150429
+
+93
+Deliv, Kev
+"> Deliverables by Kevin - Release 20150429</a><a > (Other) </a>
+<ul><div id="Div5">
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15713345" class="lineitem"  title="Target Information Model Annexes v04
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15713345
+94
+Deliv, Kev, TIM, Model
+"> Target Information Model Annexes v04 (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15710136" class="lineitem"  title="Target Information Model Development Methodology v0.3
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15710136
+95
+Deliv, Kev, TIM, Model
+"> Target Information Model Development Methodology v0.3 (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15712126" class="lineitem"  title="Target Information Model Requirement Management v.5
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15712126
+96
+Deliv, Kev, TIM, Model
+"> Target Information Model Requirement Management v.5 (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15717017" class="lineitem"  title="Target Information Model Specification v04
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15717017
+97
+Deliv, Kev, TIM, Model
+"> Target Information Model Specification v04 (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15715395" class="lineitem"  title="Task Authorization 020 Deliverables for Period 04 2015
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15715395
+98
+Deliv, Kev, TIM, Model, TA
+"> Task Authorization 020 Deliverables for Period 04 2015 (gcdocs) </a></li>
+</div></ul></li>
+<li><a  onclick="toggle_visibility('Div6')"  class="header"  title="Deliverables from Kevin on 20150331
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15715395
+99
+Deliv, Kev,  Model
+"> Deliverables from Kevin on 20150331</a><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15715395"> (gcdocs) </a>
+<ul><div id="Div6">
+</div></ul></li>
+<li><a  onclick="toggle_visibility('Div7')"  class="header"  title="Annex B-3 Modelling Approach Methodology and Requirement
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15194957
+100
+Deliv, Annex, Model
+"> Annex B-3 Modelling Approach Methodology and Requirement</a><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15194957"> (gcdocs) </a>
+<ul><div id="Div7">
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15195147" class="lineitem"  title="EIRA - Project Strategy and Approach v04 20150331
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15195147
+101
+Deliv, EIRA, Model
+"> EIRA - Project Strategy and Approach v04 20150331 (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15193362" class="lineitem"  title="Final Deliverables, Information Architect, IMP Vision Phase
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15193362
+102
+Deliv, Model
+"> Final Deliverables, Information Architect, IMP Vision Phase (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15195067" class="lineitem"  title="Fleet Management Process Model Annex C3-2
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15195067
+103
+Deliv, Process, Model,Process
+"> Fleet Management Process Model Annex C3-2 (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15194956" class="lineitem"  title="Target Information Model Specification - Annex B-2
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15194956
+104
+Deliv, TIM, Model
+"> Target Information Model Specification - Annex B-2 (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15195554" class="lineitem"  title="Task Authoriation 020 Cover Letter March 31
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15195554
+105
+Deliv, Model,TA
+"> Task Authoriation 020 Cover Letter March 31 (gcdocs) </a></li>
+</div></ul></li>
+<li><a  onclick="toggle_visibility('Div8')"  class="header"  title="LEADing Practice
+
+106
+Deliv, LEAD
+"> LEADing Practice</a><a > (Other) </a>
+<ul><div id="Div8">
+</div></ul></li>
+<li><a  onclick="toggle_visibility('Div9')"  class="header"  title="GC FM Business Blueprint
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/14105146
+107
+Deliv, LEAD
+"> GC FM Business Blueprint</a><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/14105146"> (gcdocs) </a>
+<ul><div id="Div9">
+<li><a  href="http://www.leadingpractice.com/tools/templates/" class="lineitem"  title="LEAD Template (LEADing Practice Site)
+http://www.leadingpractice.com/tools/templates/
+108
+Deliv, LEAD
+"> LEAD Template (LEADing Practice Site) (Web) </a></li>
+</div></ul></li>
+<li><a  onclick="toggle_visibility('Div10')"  class="header"  title="Deliverables by Mark Oconnor
+
+109
+Deliv
+"> Deliverables by Mark Oconnor</a><a > (Other) </a>
+<ul><div id="Div10">
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/8399474" class="lineitem"  title="Information Model Strategy
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/8399474
+110
+Deliv, MO, strategy
+"> Information Model Strategy (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15166623" class="lineitem"  title="Conceptual Information Map v0.2.2.pdf
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15166623
+111
+Deliv, MO, strategy
+"> Conceptual Information Map v0.2.2.pdf (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15165327" class="lineitem"  title="Target Information Model Draft Strategy v03 20150323.docx
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15165327
+112
+Deliv, MO, strategy, TIM
+"> Target Information Model Draft Strategy v03 20150323.docx (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15166619" class="lineitem"  title="TIM Scenarios - Info and Data requirements v04.xlsx
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15166619
+113
+Deliv, MO, strategy, TIM
+"> TIM Scenarios - Info and Data requirements v04.xlsx (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15180965" class="lineitem"  title="xPropagation of PS HR changes to other systems 20150330.igx
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15180965
+114
+Deliv, MO, strategy
+"> xPropagation of PS HR changes to other systems 20150330.igx (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15174859" class="lineitem"  title="xPropagation of PS HR changes to other systems.pdf
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15174859
+115
+Deliv, MO, strategy
+"> xPropagation of PS HR changes to other systems.pdf (gcdocs) </a></li>
+</div></ul></li>
+<li><a  onclick="toggle_visibility('Div11')"  class="header"  title="Delverables - Added by Rob
+
+116
+Deliv, RW
+"> Delverables - Added by Rob</a><a > (Other) </a>
+<ul><div id="Div11">
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15440576" class="lineitem"  title="12226TA004 - 2015-03-31-15-28 Draft Assessment of Alternative to the Existing TBS Enterprise and Architecture Repository.docx 
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15440576
+117
+Deliv, RW
+"> 12226TA004 - 2015-03-31-15-28 Draft Assessment of Alternative to the Existing TBS Enterprise and Architecture Repository.docx  (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15446149" class="lineitem"  title="12226TA008 - 2015-02-10-15-57 Timeline and activity for Repository and Tools at OCG.docx 
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15446149
+118
+Deliv, RW
+"> 12226TA008 - 2015-02-10-15-57 Timeline and activity for Repository and Tools at OCG.docx  (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15444390" class="lineitem"  title="12226TA008 - 2015-03-03-13-50 Thought Experiment aka Webinars.docx 
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15444390
+119
+Deliv, RW
+"> 12226TA008 - 2015-03-03-13-50 Thought Experiment aka Webinars.docx  (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15441297" class="lineitem"  title="12226TA008 - 2015-03-31-15-59 Standard Layout of Excel.docx 
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15441297
+120
+Deliv, RW
+"> 12226TA008 - 2015-03-31-15-59 Standard Layout of Excel.docx  (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15441081" class="lineitem"  title="12226TA011 - 2014-05-27-14-02 Arch Design Future for FMT Note.docx 
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15441081
+121
+Deliv, RW
+"> 12226TA011 - 2014-05-27-14-02 Arch Design Future for FMT Note.docx  (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15438681" class="lineitem"  title="12226TA011 - 2014-11-03-16-58 Process Nature v5.docx 
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15438681
+122
+Deliv, RW,process
+"> 12226TA011 - 2014-11-03-16-58 Process Nature v5.docx  (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15440692" class="lineitem"  title="12226TA011 - 2014-11-04-17-01 Process Classification & Representation.pptx 
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15440692
+123
+Deliv, RW,process
+"> 12226TA011 - 2014-11-04-17-01 Process Classification & Representation.pptx  (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15441082" class="lineitem"  title="12226TA018 - 2014-11-26-21-07 Overview of strategic Design.docx 
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15441082
+124
+Deliv, RW
+"> 12226TA018 - 2014-11-26-21-07 Overview of strategic Design.docx  (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15447736" class="lineitem"  title="12226TA018 - 2014-12-14-15-43 Model Design Standards v2.docx 
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15447736
+125
+Deliv, RW
+"> 12226TA018 - 2014-12-14-15-43 Model Design Standards v2.docx  (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15646403" class="lineitem"  title="12226TA018 - 2015-01-21-15-35 FMT Model Management Plan - DRAFT as of 2014-06-23.docx 
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15646403
+126
+Deliv, RW
+"> 12226TA018 - 2015-01-21-15-35 FMT Model Management Plan - DRAFT as of 2014-06-23.docx  (gcdocs) </a></li>
+</div></ul></li>
+<li><a  onclick="toggle_visibility('Div12')"  class="header"  title="Srini - Provided 20150430
+
+127
+Deliv, Srini
+"> Srini - Provided 20150430</a><a > (Other) </a>
+<ul><div id="Div12">
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15749667" class="lineitem"  title="EHP1 for SAP Solution manager 7.1 - Change Requets Management Cofiguration Guide
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15749667
+128
+Deliv, Srini, SAP, Config
+"> EHP1 for SAP Solution manager 7.1 - Change Requets Management Cofiguration Guide (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15747765" class="lineitem"  title="EHP1 for SAP Solution manager 7.1 - IT Service Request Configuration Guide
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15747765
+129
+Deliv, Srini, SAP, Config
+"> EHP1 for SAP Solution manager 7.1 - IT Service Request Configuration Guide (gcdocs) </a></li>
+</div></ul></li>
+<li><a  onclick="toggle_visibility('Div13')"  class="header"  title="Others
+
+130
+Deliv
+"> Others</a><a > (Other) </a>
+<ul><div id="Div13">
+</div></ul></li>
+<li><a  onclick="toggle_visibility('Div14')"  class="header"  title="Studies
+
+131
+Deliv, Studies
+"> Studies</a><a > (Other) </a>
+<ul><div id="Div14">
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/3346237" class="lineitem"  title="Gartner Study - Government of Canada Application Renewal and Rationalization Business Case Support
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/3346237
+132
+Deliv, Studies
+"> Gartner Study - Government of Canada Application Renewal and Rationalization Business Case Support (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/8003050" class="lineitem"  title="Info Strategy and Data Preparedeness
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/8003050
+133
+Deliv, Studies
+"> Info Strategy and Data Preparedeness (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/7610072" class="lineitem"  title="BPC - BW
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/7610072
+134
+Deliv, Studies
+"> BPC - BW (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/8003050" class="lineitem"  title="Info Strategy and Data Preparedness
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/8003050
+135
+Deliv, Studies
+"> Info Strategy and Data Preparedness (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/7582928" class="lineitem"  title="TBS Common Organizational Identifiers
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/7582928
+136
+Deliv, Studies,ref
+"> TBS Common Organizational Identifiers (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/14038243" class="lineitem"  title="Business Process Ready for Rational Tool
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/14038243
+137
+Deliv, Studies,process
+"> Business Process Ready for Rational Tool (gcdocs) </a></li>
+</div></ul></li>
+<li><a  onclick="toggle_visibility('Div15')"  class="header"  title=" EIRA Information Strategy
+
+138
+Deliv, EIRA, Strategy
+">  EIRA Information Strategy</a><a > (Other) </a>
+<ul><div id="Div15">
+<li><a  class="lineitem"  title="Enterprise Information Reporting and Analytics - CG Presentation v3
+
+139
+Deliv, EIRA, Strategy
+"> Enterprise Information Reporting and Analytics - CG Presentation v3 (Other) </a></li>
+<li><a  class="lineitem"  title="Enterprise Information Reporting and Analytcis Stream_DTC Proof Of Concept_20140926(final)
+
+140
+Deliv, EIRA, Strategy, DTC
+"> Enterprise Information Reporting and Analytcis Stream_DTC Proof Of Concept_20140926(final) (Other) </a></li>
+<li><a  class="lineitem"  title="GC TBS FMT- Information Strategy and Data Preparedness - TA009 - DRAFT- Mar.28
+
+141
+Deliv, EIRA, Strategy
+"> GC TBS FMT- Information Strategy and Data Preparedness - TA009 - DRAFT- Mar.28 (Other) </a></li>
+<li><a  class="lineitem"  title="TBS_FMT_Info_Strategy_Draft_Canada_TA009_March28_rev2
+
+142
+Deliv, EIRA, Strategy
+"> TBS_FMT_Info_Strategy_Draft_Canada_TA009_March28_rev2 (Other) </a></li>
+<li><a  class="lineitem"  title="BI Overview Draft
+
+143
+Deliv, EIRA, Strategy
+"> BI Overview Draft (Other) </a></li>
+<li><a  class="lineitem"  title="Enterprise Information Reporting and Analytics - CG Presentation v3 - Annexes
+
+144
+Deliv, EIRA, Strategy
+"> Enterprise Information Reporting and Analytics - CG Presentation v3 - Annexes (Other) </a></li>
+<li><a  class="lineitem"  title="FMT Program Plan (3 year)
+
+145
+Deliv, EIRA, Strategy
+"> FMT Program Plan (3 year) (Other) </a></li>
+<li><a  class="lineitem"  title="3-Year Plan for FMT (PPT)
+
+146
+Deliv, EIRA, Strategy
+"> 3-Year Plan for FMT (PPT) (Other) </a></li>
+</div></ul></li>
+<li><a  onclick="toggle_visibility('Div16')"  class="header"  title="To be sorted
+
+147
+Deliv
+"> To be sorted</a><a > (Other) </a>
+<ul><div id="Div16">
+<li><a  class="lineitem"  title="TBS Info Base
+
+148
+Deliv
+"> TBS Info Base (Other) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/14292447" class="lineitem"  title="Annual FMS Cluster Draft Plan 2015-16 Briefing Note
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/14292447
+149
+Deliv
+"> Annual FMS Cluster Draft Plan 2015-16 Briefing Note (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/14289711" class="lineitem"  title="2015-16 FMS Cluster Comparison Summary & Details (IFMS, Non SAP)
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/14289711
+150
+Deliv
+"> 2015-16 FMS Cluster Comparison Summary & Details (IFMS, Non SAP) (gcdocs) </a></li>
+<li><a  class="lineitem"  title="FMS Cluster  5 Year analysis -2011-12 to 2015-16
+
+151
+Deliv
+"> FMS Cluster  5 Year analysis -2011-12 to 2015-16 (Other) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/14143202" class="lineitem"  title="Call Letter for Annual FMS Cluster Draft Plan 2015-16
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/14143202
+152
+Deliv
+"> Call Letter for Annual FMS Cluster Draft Plan 2015-16 (gcdocs) </a></li>
+<li><a  class="lineitem"  title="FMS Cluster Risk & Challenges  Product Lifecycle support
+
+153
+Deliv
+"> FMS Cluster Risk & Challenges  Product Lifecycle support (Other) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/14361757" class="lineitem"  title="FMS Cluster Risk & Challenges  Product Lifecycle support
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/14361757
+154
+Deliv
+"> FMS Cluster Risk & Challenges  Product Lifecycle support (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/14763903" class="lineitem"  title="Oracle Cluster Product Lifecycle support
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/14763903
+155
+Deliv
+"> Oracle Cluster Product Lifecycle support (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/14361954" class="lineitem"  title="FreeBalance Cluster Product Lifecycle support
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/14361954
+156
+Deliv
+"> FreeBalance Cluster Product Lifecycle support (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/14348043" class="lineitem"  title="GX Cluster Product Lifecycle support
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/14348043
+157
+Deliv
+"> GX Cluster Product Lifecycle support (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/14351693" class="lineitem"  title="CDFS Cluster Product Lifecycle support
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/14351693
+158
+Deliv
+"> CDFS Cluster Product Lifecycle support (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/14135905" class="lineitem"  title="FMS Draft Evaluation/Comments
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/14135905
+159
+Deliv
+"> FMS Draft Evaluation/Comments (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/14114997" class="lineitem"  title="Reference Source: Draft Annual FMS Cluster Plans for 2015-16
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/14114997
+160
+Deliv
+"> Reference Source: Draft Annual FMS Cluster Plans for 2015-16 (gcdocs) </a></li>
+<li><a  class="lineitem"  title="Canada.ca - Content & Information Architecture Specification
+
+161
+Deliv
+"> Canada.ca - Content & Information Architecture Specification (Other) </a></li>
+</div></ul></li>
+<li><a  onclick="toggle_visibility('Div17')"  class="header"  title="Reference Documents
+
+162
+Deliv
+"> Reference Documents</a><a > (Other) </a>
+<ul><div id="Div17">
+<li><a  href="http://metadata-stds.org/19763/index.html" class="lineitem"  title="ISO/IEC 19763, Information Technology – Metamodel Framework for Interoperability (MFI)
+http://metadata-stds.org/19763/index.html
+163
+Deliv, Ref
+"> ISO/IEC 19763, Information Technology – Metamodel Framework for Interoperability (MFI) (Web) </a></li>
+<li><a  href="http://www.omg.org/spec/UML/" class="lineitem"  title="UML - Object Management Group
+http://www.omg.org/spec/UML/
+164
+Deliv, Ref
+"> UML - Object Management Group (Web) </a></li>
+<li><a  href="http://www.ibm.com/developerworks/xml/library/" class="lineitem"  title="IBM Technical Library
+http://www.ibm.com/developerworks/xml/library/
+165
+Deliv, Ref
+"> IBM Technical Library (Web) </a></li>
+<li><a  href="http://www.dcs.ed.ac.uk/home/pxs/XMI/" class="lineitem"  title="XMI Hackers home page
+http://www.dcs.ed.ac.uk/home/pxs/XMI/
+166
+Deliv, Ref
+"> XMI Hackers home page (Web) </a></li>
+<li><a  href="http://www.objectsbydesign.com" class="lineitem"  title="Exampel: producing HTML from XMI
+http://www.objectsbydesign.com
+167
+Deliv, Ref
+"> Exampel: producing HTML from XMI (Web) </a></li>
+<li><a  href="http://www.omg.org/spec/CWM/" class="lineitem"  title="Common Warehouse Metamodel (CWM) 
+http://www.omg.org/spec/CWM/
+168
+Deliv, Ref
+"> Common Warehouse Metamodel (CWM)  (Web) </a></li>
+<li><a  href="http://www.gcpedia.gc.ca/wiki/Canada.ca_Content_%26_Information_Architecture_Specification" class="lineitem"  title="Canada.ca - Content & Information Architecture Specification
+http://www.gcpedia.gc.ca/wiki/Canada.ca_Content_%26_Information_Architecture_Specification
+169
+Deliv, Ref
+"> Canada.ca - Content & Information Architecture Specification (Web) </a></li>
+</div></ul></li>
+<li><a  onclick="toggle_visibility('Div18')"  class="header"  title="Modelling
+
+170
+Deliv
+"> Modelling</a><a > (Other) </a>
+<ul><div id="Div18">
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/14913841" class="lineitem"  title="IBM Rational Webinars
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/14913841
+171
+Deliv
+"> IBM Rational Webinars (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/14927385" class="lineitem"  title="Repository of Requirements
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/14927385
+172
+Deliv
+"> Repository of Requirements (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15139620" class="lineitem"  title="SSI Back-Up 2015-03-30
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15139620
+173
+Deliv
+"> SSI Back-Up 2015-03-30 (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/12409976" class="lineitem"  title="CECM Deliverables
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/12409976
+174
+Deliv
+"> CECM Deliverables (gcdocs) </a></li>
+</div></ul></li>
+<li><a  onclick="toggle_visibility('Div19')"  class="header"  title="Annexes from ADS version 1.0
+
+175
+Deliv
+"> Annexes from ADS version 1.0</a><a > (Other) </a>
+<ul><div id="Div19">
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11718455" class="folder"  title="Annex A: Architecture
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11718455
+176
+Deliv
+"> Annex A: Architecture (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11717656" class="lineitem"  title="A1 -Architecture and Implementation Management plan deliverable v1.01.docx 
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11717656
+177
+Deliv, plan
+"> A1 -Architecture and Implementation Management plan deliverable v1.01.docx  (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11701886" class="lineitem"  title="A2- Architecture roadmap 20140529 vf.docx 
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11701886
+178
+Deliv, roadmap
+"> A2- Architecture roadmap 20140529 vf.docx  (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11718261" class="lineitem"  title="A3 - Design approachv20140325.pptx 
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11718261
+179
+Deliv, approach
+"> A3 - Design approachv20140325.pptx  (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11688556" class="lineitem"  title="A4 - Appendix_FMT_DEV_Core_System_Specification.docx 
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11688556
+180
+Deliv
+"> A4 - Appendix_FMT_DEV_Core_System_Specification.docx  (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11697565" class="lineitem"  title="A5 -Nova Scotia Business Area SAP.pdf 
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11697565
+181
+Deliv, SAP
+"> A5 -Nova Scotia Business Area SAP.pdf  (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11717861" class="lineitem"  title="A6 -GEN_SFSS_Fin Mat Bus Reqs Define and Priority_DT35-V20140422.xls 
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11717861
+182
+Deliv
+"> A6 -GEN_SFSS_Fin Mat Bus Reqs Define and Priority_DT35-V20140422.xls  (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11699253" class="lineitem"  title="A7 - FMT Overview - 101 - May 2014.pptx 
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11699253
+183
+Deliv, Overview
+"> A7 - FMT Overview - 101 - May 2014.pptx  (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11714432" class="lineitem"  title="A3 - FMT SAP Technical Requirements Document v0 5.doc 
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11714432
+184
+Deliv, SAP
+"> A3 - FMT SAP Technical Requirements Document v0 5.doc  (gcdocs) </a></li>
+<li><a  class="folder"  title="Annex B: Enterprise Reporting and Analytics
+
+185
+Deliv,EIRA
+"> Annex B: Enterprise Reporting and Analytics (Other) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11715629" class="lineitem"  title="B1 - GC TBS FMT- Information Strategy and Data Preparedness - DRAFT- Mar.28.docx
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11715629
+186
+Deliv
+"> B1 - GC TBS FMT- Information Strategy and Data Preparedness - DRAFT- Mar.28.docx (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11718260" class="lineitem"  title="B2 - FMT BPC-BW Proposed Implementation Roadmap v1.1.docx
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11718260
+187
+Deliv
+"> B2 - FMT BPC-BW Proposed Implementation Roadmap v1.1.docx (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11717955" class="lineitem"  title="B3 - FMT Information Strategy - Sidecar Document v1 0Rev.docx
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11717955
+188
+Deliv
+"> B3 - FMT Information Strategy - Sidecar Document v1 0Rev.docx (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11718356" class="lineitem"  title="B3 - TBS_FMT_Info_Strategy_Draft_March28.pptx
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11718356
+189
+Deliv
+"> B3 - TBS_FMT_Info_Strategy_Draft_March28.pptx (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11718454" class="lineitem"  title="B4 - FMT BPC-BW Proposed Implementation Roadmap v1.1.docx
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11718454
+190
+Deliv
+"> B4 - FMT BPC-BW Proposed Implementation Roadmap v1.1.docx (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11704830" class="lineitem"  title="B5 - Information Model Strategy.docx
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11704830
+191
+Deliv,Info, Model, Strategy
+"> B5 - Information Model Strategy.docx (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11717655" class="lineitem"  title="B6 - FMT Transformation Application Service (TAS) Design v1 0.docx
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11717655
+192
+Deliv,DTC
+"> B6 - FMT Transformation Application Service (TAS) Design v1 0.docx (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11717660" class="lineitem"  title="B7 - TAS POC Plan.ppt
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11717660
+193
+Deliv,DTC
+"> B7 - TAS POC Plan.ppt (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11715630" class="lineitem"  title="B8 - FMT Strategy and Conceptual Design for Planning #26 Performance-DRAFT v1.0.docx
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11715630
+194
+Deliv, Strategy
+"> B8 - FMT Strategy and Conceptual Design for Planning #26 Performance-DRAFT v1.0.docx (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11695351" class="lineitem"  title="B9 - FMT Transformation Application Service (TAS) Design v1 0.docx
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11695351
+195
+Deliv, DTC
+"> B9 - FMT Transformation Application Service (TAS) Design v1 0.docx (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11701588" class="lineitem"  title="TAS POC - 2014 08 v4.ppt 
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11701588
+196
+Deliv, DTC
+"> TAS POC - 2014 08 v4.ppt  (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11694839" class="folder"  title="Annex C: Enterprise Solution
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11694839
+197
+Deliv
+"> Annex C: Enterprise Solution (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11700999" class="lineitem"  title="C1 - Government of Canada ERP Systems Key Stats_V0.1.docx 
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11700999
+198
+Deliv
+"> C1 - Government of Canada ERP Systems Key Stats_V0.1.docx  (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11718556" class="lineitem"  title="C2 - SAP_FMT_Co-innovation_09 05.pptx 
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11718556
+199
+Deliv, SAP
+"> C2 - SAP_FMT_Co-innovation_09 05.pptx  (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11713310" class="lineitem"  title="C3 - FMT SAP Technical Requirements Document v0 5.doc 
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11713310
+200
+Deliv, SAP
+"> C3 - FMT SAP Technical Requirements Document v0 5.doc  (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11698278" class="lineitem"  title="C4 - Final_SAP_Brochure_English.pdf 
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11698278
+201
+Deliv, SAP
+"> C4 - Final_SAP_Brochure_English.pdf  (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11717654" class="lineitem"  title="C5 -Colgate Palmolive Company Managing SAP ERP Upgrade with enhancement packages.pdf 
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11717654
+202
+Deliv, SAP
+"> C5 -Colgate Palmolive Company Managing SAP ERP Upgrade with enhancement packages.pdf  (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11718259" class="lineitem"  title="C6 -New GL & Document Splitting.docx 
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11718259
+203
+Deliv,SAP
+"> C6 -New GL & Document Splitting.docx  (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11695249" class="lineitem"  title="C7 - A_Detailed_Guide_to_the_Features_and_Functions_in_SAP_General_Ledger.pdf 
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11695249
+204
+Deliv, SAP
+"> C7 - A_Detailed_Guide_to_the_Features_and_Functions_in_SAP_General_Ledger.pdf  (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11693416" class="lineitem"  title="C8 - AC210 - New General Ledger Accounting.pdf 
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11693416
+205
+Deliv, SAP
+"> C8 - AC210 - New General Ledger Accounting.pdf  (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11689679" class="lineitem"  title="C9 - sappress_segment_reporting.pdf 
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11689679
+206
+Deliv, SAP
+"> C9 - sappress_segment_reporting.pdf  (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11704626" class="lineitem"  title="C10 - 2012-13 Dept list w DFMS.xls 
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11704626
+207
+Deliv, AsIs
+"> C10 - 2012-13 Dept list w DFMS.xls  (gcdocs) </a></li>
+<li><a  class="folder"  title="Annex D: Enterprise Service Delivery
+
+208
+Deliv
+"> Annex D: Enterprise Service Delivery (Other) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11688555" class="lineitem"  title="Annex E: Security
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11688555
+209
+Deliv, Security
+"> Annex E: Security (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11699254" class="lineitem"  title="Annex F: SAP and HANA
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11699254
+210
+Deliv, SAP
+"> Annex F: SAP and HANA (gcdocs) </a></li>
+<li><a  class="lineitem"  title="Annex F1: SAP NetWeaver BW powered by HANA
+
+211
+Deliv, SAP
+"> Annex F1: SAP NetWeaver BW powered by HANA (Other) </a></li>
+<li><a  class="lineitem"  title="Annex F2: How SAP NetWeaver BW running on HANA changes Business Processes
+
+212
+Deliv, SAP, process
+"> Annex F2: How SAP NetWeaver BW running on HANA changes Business Processes (Other) </a></li>
+<li><a  class="lineitem"  title="Annex F3: Virtualizing SAP HANA
+
+213
+Deliv, SAP
+"> Annex F3: Virtualizing SAP HANA (Other) </a></li>
+<li><a  class="lineitem"  title="Annex F4: SAP HANA virtualized roadmap
+
+214
+Deliv, SAP
+"> Annex F4: SAP HANA virtualized roadmap (Other) </a></li>
+<li><a  class="lineitem"  title="Annex F5: Fundamentals of SAP Business Suite powered by HANA
+
+215
+Deliv, SAP
+"> Annex F5: Fundamentals of SAP Business Suite powered by HANA (Other) </a></li>
+<li><a  class="lineitem"  title="Annex F6: SAP HANA Finance Fact book
+
+216
+Deliv, SAP
+"> Annex F6: SAP HANA Finance Fact book (Other) </a></li>
+<li><a  class="lineitem"  title="Annex F7 – SAP HANA Financials for Public Sector RDS
+
+217
+Deliv, SAP
+"> Annex F7 – SAP HANA Financials for Public Sector RDS (Other) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11701887" class="folder"  title="Annex G : Management reports
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11701887
+218
+Deliv
+"> Annex G : Management reports (gcdocs) </a></li>
+<li><a  class="lineitem"  title="Annex G1: Public Safety – Audit of Financial Planning, Forecasting & Monitoring
+
+219
+Deliv, Audit,
+"> Annex G1: Public Safety – Audit of Financial Planning, Forecasting & Monitoring (Other) </a></li>
+<li><a  class="lineitem"  title="Annex G2: Proactive management of Reporting Obligations
+
+220
+Deliv
+"> Annex G2: Proactive management of Reporting Obligations (Other) </a></li>
+<li><a  class="lineitem"  title="Annex G3 - STRENGTHENING PARLIAMENTARY SCRUTINY OF ESTIMATES AND SUPPLY
+
+221
+Deliv
+"> Annex G3 - STRENGTHENING PARLIAMENTARY SCRUTINY OF ESTIMATES AND SUPPLY (Other) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11704831" class="folder"  title="Annex H – Data Management & TIM
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11704831
+222
+Deliv, TIM
+"> Annex H – Data Management & TIM (gcdocs) </a></li>
+<li><a  class="lineitem"  title="Annex H1: The Power of Common Business Language
+
+223
+Deliv
+"> Annex H1: The Power of Common Business Language (Other) </a></li>
+<li><a  class="lineitem"  title="Annex H2 – Master Data Governance – SAP
+
+224
+Deliv, SAP
+"> Annex H2 – Master Data Governance – SAP (Other) </a></li>
+<li><a  class="lineitem"  title="Annex H3: TIM 101
+
+225
+Deliv, TIM
+"> Annex H3: TIM 101 (Other) </a></li>
+<li><a  class="lineitem"  title="Annex H4: Master Data Work Group Session 1
+
+226
+Deliv, data
+"> Annex H4: Master Data Work Group Session 1 (Other) </a></li>
+<li><a  class="lineitem"  title="Annex H5: Financial Coding block Workshop
+
+227
+Deliv
+"> Annex H5: Financial Coding block Workshop (Other) </a></li>
+<li><a  class="lineitem"  title="Annex H6 – Understanding Chart of Accounts
+
+228
+Deliv
+"> Annex H6 – Understanding Chart of Accounts (Other) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11696762" class="folder"  title="Annex I: Lunch and Learn
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11696762
+229
+Deliv
+"> Annex I: Lunch and Learn (gcdocs) </a></li>
+<li><a  class="lineitem"  title="Annex I1: Way forward
+
+230
+Deliv
+"> Annex I1: Way forward (Other) </a></li>
+<li><a  class="lineitem"  title="Annex I2: Business/Service Modeling
+
+231
+Deliv
+"> Annex I2: Business/Service Modeling (Other) </a></li>
+<li><a  class="lineitem"  title="Annex I3: Build Approach
+
+232
+Deliv
+"> Annex I3: Build Approach (Other) </a></li>
+<li><a  class="lineitem"  title="Annex I4: FMT Enterprise Architecture
+
+233
+Deliv
+"> Annex I4: FMT Enterprise Architecture (Other) </a></li>
+</div></ul></li>
+<li><a  onclick="toggle_visibility('Div20')"  class="header"  title="Related
+
+234
+Deliv
+"> Related</a><a > (Other) </a>
+<ul><div id="Div20">
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15747819" class="lineitem"  title="Back Office Transformation Interoperability Project - Project Charter
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15747819
+235
+Deliv, Interop, Charter
+"> Back Office Transformation Interoperability Project - Project Charter (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16103310" class="lineitem"  title="FMT DR - 68 - Architecture and Engineering Environment - Detail Report.docx 
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16103310
+236
+Deliv
+"> FMT DR - 68 - Architecture and Engineering Environment - Detail Report.docx  (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16100411" class="lineitem"  title="FMT DR - 68 -Architecture Tools 2015-05-21 v2.docx
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16100411
+237
+Deliv
+"> FMT DR - 68 -Architecture Tools 2015-05-21 v2.docx (gcdocs) </a></li>
+<li><a  href="http://www.tbs-sct.gc.ca/cioscripts/gloss/gloss-alpha_e.asp?who=/clf-nsi/&format=print" class="lineitem"  title="On-line TBS Glossary
+http://www.tbs-sct.gc.ca/cioscripts/gloss/gloss-alpha_e.asp?who=/clf-nsi/&format=print
+238
+Ref
+"> On-line TBS Glossary (Web) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16646862" class="lineitem"  title="IFMS-SAP Final Support-MP-330006652-V3 0 CEH.pdf
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16646862
+239
+Study, SAP
+"> IFMS-SAP Final Support-MP-330006652-V3 0 CEH.pdf (Other) </a></li>
+<li><a  href="http://jsonschema.net/#/" class="lineitem"  title="JSON Schema Generator
+http://jsonschema.net/#/
+240
+Opendata
+"> JSON Schema Generator (Web) </a></li>
+<li><a  href="http://www-01.ibm.com/support/knowledgecenter/SS7NQD_8.0.1/com.ibm.wbpm.admin.doc/managinglib/topic/csap_overview.html" class="lineitem"  title="IBM Knowledge Center - SOLMAN
+http://www-01.ibm.com/support/knowledgecenter/SS7NQD_8.0.1/com.ibm.wbpm.admin.doc/managinglib/topic/csap_overview.html
+241
+Ref
+"> IBM Knowledge Center - SOLMAN (Web) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/8685622" class="lineitem"  title="Alignment Centre_LEADing Practice_June 2014.docx
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/8685622
+242
+LEAD
+"> Alignment Centre_LEADing Practice_June 2014.docx (gcdocs) </a></li>
+<li><a  href="http://publiservice.tbs-sct.gc.ca/mrrs-sgrr/about-apropos/instructions-consignes-eng.asp#tocAF" class="lineitem"  title="Instructions to Departments for Developing a Management, Resources and Results Structure
+http://publiservice.tbs-sct.gc.ca/mrrs-sgrr/about-apropos/instructions-consignes-eng.asp#tocAF
+243
+tbs, tagging, mrrs
+"> Instructions to Departments for Developing a Management, Resources and Results Structure (Web) </a></li>
+<li><a  href="K:\@ADS\Document Intake\P&P - PSI - Draft Architecture deck (Jly 10 ).doc" class="lineitem"  title="P&P - PSI - Draft Architecture deck (Jly 10 ).doc
+K:\@ADS\Document Intake\P&P - PSI - Draft Architecture deck (Jly 10 ).doc
+244
+PSR
+"> P&P - PSI - Draft Architecture deck (Jly 10 ).doc (Other) </a></li>
+<li><a  href="K:\@ADS\Document Intake\PP-PSI-PSR-WG July 13 Agenda.doc (7) - Copy.docx" class="lineitem"  title="PP-PSI-PSR-WG July 13 Agenda.doc (7) - Copy
+K:\@ADS\Document Intake\PP-PSI-PSR-WG July 13 Agenda.doc (7) - Copy.docx
+245
+PSR
+"> PP-PSI-PSR-WG July 13 Agenda.doc (7) - Copy (Other) </a></li>
+<li><a  href="K:\@ADS\Document Intake\GC FI_Competency_Profiles_and_Dictionar.docx" class="lineitem"  title="GC FI_Competency_Profiles_and_Dictionary
+K:\@ADS\Document Intake\GC FI_Competency_Profiles_and_Dictionar.docx
+246
+FM, Model
+"> GC FI_Competency_Profiles_and_Dictionary (Other) </a></li>
+<li><a  href="K:\@ADS\Document Intake\GC FM Model Approach 2015-06-23.pptx" class="lineitem"  title="GC FM Model Approach 2015-06-23
+K:\@ADS\Document Intake\GC FM Model Approach 2015-06-23.pptx
+247
+FM, Model, Approach
+"> GC FM Model Approach 2015-06-23 (Other) </a></li>
+<li><a  href="K:\@ADS\Document Intake\Sources and options for architecture descriptions to be used by FMT.docx" class="lineitem"  title="Sources and options for architecture descriptions to be used by FMT
+K:\@ADS\Document Intake\Sources and options for architecture descriptions to be used by FMT.docx
+248
+FM, Model, Approach
+"> Sources and options for architecture descriptions to be used by FMT (Other) </a></li>
+<li><a  href="K:\@ADS\Document Intake\Centralized BI Exec Summary Oct11 (2).docx" class="lineitem"  title="Centralized BI Exec Summary Oct11 (2)
+K:\@ADS\Document Intake\Centralized BI Exec Summary Oct11 (2).docx
+249
+IFMS,  BW, BI
+"> Centralized BI Exec Summary Oct11 (2) (Other) </a></li>
+<li><a  href="K:\@ADS\Document Intake\IFMS Cluster Roadmap.pdf" class="lineitem"  title="IFMS Cluster Roadmap
+K:\@ADS\Document Intake\IFMS Cluster Roadmap.pdf
+250
+IFMS, SAP, roadmap
+"> IFMS Cluster Roadmap (Other) </a></li>
+<li><a  href="K:\@ADS\Document Intake" class="lineitem"  title="Financial Management Capability Model
+K:\@ADS\Document Intake
+251
+OAG, FM, Capability, Model
+"> Financial Management Capability Model (Other) </a></li>
+<li><a  href="http://chrbp-pocrh.tbs-sct.gc.ca/home-eng.aspx" class="lineitem"  title="Common Human Resources Business Process (CHRBP)
+http://chrbp-pocrh.tbs-sct.gc.ca/home-eng.aspx
+252
+HR, Business, Process
+"> Common Human Resources Business Process (CHRBP) (Web) </a></li>
+<li><a  href="http://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=17172" class="lineitem"  title="Guideline On Common Financial Management Business Process 5.1 - Pay Administration
+http://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=17172
+253
+FM, Policy, process
+"> Guideline On Common Financial Management Business Process 5.1 - Pay Administration (Web) </a></li>
+<li><a  href="http://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=17589" class="lineitem"  title="Policy on the Stewardship of Financial Management Systems
+http://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=17589
+254
+FM, Policy
+"> Policy on the Stewardship of Financial Management Systems (Web) </a></li>
+<li><a  href="http://dev.ccapps.tbs-sct.gc.ca/sandbox/default.aspx" class="lineitem"  title="Dashboard for TBS' Policy Management Database application
+http://dev.ccapps.tbs-sct.gc.ca/sandbox/default.aspx
+255
+FM, Policy
+"> Dashboard for TBS' Policy Management Database application (Web) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/12833306" class="lineitem"  title="FMT 3 Year Unconstrained Plan.mpp Functions Download
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/12833306
+256
+PMO, plan
+"> FMT 3 Year Unconstrained Plan.mpp Functions Download (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/13692246" class="lineitem"  title=" FMT 3 Year Plan Constrained per PSMAC
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/13692246
+257
+PMO, plan
+">  FMT 3 Year Plan Constrained per PSMAC (gcdocs) </a></li>
+<li><a  href="https://www.r-consortium.org/" class="lineitem"  title="R - Open Source Data Analytics Software
+https://www.r-consortium.org/
+258
+info, analytics, programming
+"> R - Open Source Data Analytics Software (Other) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16400567" class="lineitem"  title="GAPR - Report Survey Final (for FMT).xlsx
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16400567
+259
+EIRA, Reporting, Analysis, Survey
+"> GAPR - Report Survey Final (for FMT).xlsx (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/1639808" class="lineitem"  title="Report Survey Final (RBM) with AT input_Comments.xlsx
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/1639808
+260
+EIRA, Reporting, Analysis, Survey
+"> Report Survey Final (RBM) with AT input_Comments.xlsx (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16394637" class="lineitem"  title="TBS Report Survey - EMS.xlsx
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16394637
+261
+EIRA, Reporting, Analysis, Survey
+"> TBS Report Survey - EMS.xlsx (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16397985" class="lineitem"  title="Foundation Plan as of 2015-05-28.pptx
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16397985
+262
+EIRA, Plan
+"> Foundation Plan as of 2015-05-28.pptx (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16681345" class="lineitem"  title="Rob's Resource Plan 2015-2016.xlsx
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16681345
+263
+EIRA, Plan
+"> Rob's Resource Plan 2015-2016.xlsx (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16675211" class="lineitem"  title="Other LEAD Deliverables (June 2014 & March 2015)
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16675211
+264
+Deliv, LEAD, Architecture, Decomposition
+"> Other LEAD Deliverables (June 2014 & March 2015) (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16673305" class="lineitem"  title="Deliverables (May & June 2015)
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16673305
+265
+Deliv, LEAD, Architecture, Decomposition
+"> Deliverables (May & June 2015) (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16821704" class="lineitem"  title="Classification of Procurement Item Standard
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16821704
+266
+TBS, CEDI, standard, procurement
+"> Classification of Procurement Item Standard (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16038952" class="lineitem"  title="DRAFT - FAQ's for FMT.docx
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16038952
+267
+
+"> DRAFT - FAQ's for FMT.docx (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16038617" class="lineitem"  title="DRAFT - FMT Key Messages.docx
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16038617
+268
+
+"> DRAFT - FMT Key Messages.docx (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16181832" class="lineitem"  title="FMT Organizational Change Management & Communications  - Presentations
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16181832
+269
+
+"> FMT Organizational Change Management & Communications  - Presentations (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16125607" class="lineitem"  title="FMT Organizational Change Management & Communications  - Graphics
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16125607
+270
+
+"> FMT Organizational Change Management & Communications  - Graphics (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16832418" class="lineitem"  title="Council of Systems Cluster Groups (CSCG)
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16832418
+271
+
+"> Council of Systems Cluster Groups (CSCG) (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16313436" class="lineitem"  title="Back Office Transformation Signed Project Charter
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16313436
+272
+
+"> Back Office Transformation Signed Project Charter (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/17024393" class="lineitem"  title="FMT Program Plan for FY 2015-16 working file.mpp
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/17024393
+273
+
+"> FMT Program Plan for FY 2015-16 working file.mpp (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16051593" class="lineitem"  title="Program Reporting and Dashboard
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16051593
+274
+
+"> Program Reporting and Dashboard (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15802538" class="lineitem"  title="FMT Internal Services
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15802538
+275
+
+"> FMT Internal Services (gcdocs) </a></li>
+<li><a  href="K:\@ADS\Document Intake\20150126-TA12226TA023-GC FM Business Blueprint.pdf" class="lineitem"  title="20150126-TA12226TA023-GC FM Business Blueprint
+K:\@ADS\Document Intake\20150126-TA12226TA023-GC FM Business Blueprint.pdf
+276
+TA, LEAD, SAP, Blueprint, FM
+"> 20150126-TA12226TA023-GC FM Business Blueprint (Other) </a></li>
+<li><a  href="K:\@ADS\Document Intake\20150420-TA12226TA024-Alignement Analysis.pdf" class="lineitem"  title="20150420-TA12226TA024-Alignement Analysis
+K:\@ADS\Document Intake\20150420-TA12226TA024-Alignement Analysis.pdf
+277
+TA, LEAD
+"> 20150420-TA12226TA024-Alignement Analysis (Other) </a></li>
+<li><a  href="http://www.gcpedia.gc.ca/wiki/Treasury_Board_Policy_Suite/Policy_Implementation" class="lineitem"  title="Treasury Board Policy Suite site
+http://www.gcpedia.gc.ca/wiki/Treasury_Board_Policy_Suite/Policy_Implementation
+279
+TBS, Policy
+"> Treasury Board Policy Suite site (Web) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/17111249" class="lineitem"  title="Source CHRBP related to PAYMOD
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/17111249
+280
+PAYMOD, Process, model
+"> Source CHRBP related to PAYMOD (gcdocs) </a></li>
+<li><a  href="http://www.tpsgc-pwgsc.gc.ca/remuneration-compensation/paye-centre-pay/index-eng.html" class="lineitem"  title="Public Service Pay Centre Web Site
+http://www.tpsgc-pwgsc.gc.ca/remuneration-compensation/paye-centre-pay/index-eng.html
+281
+PAYMOD, process
+"> Public Service Pay Centre Web Site (Web) </a></li>
+<li><a  href="k:\@ads\Document Intake\FMT Program Management Plan 2015-07-06.docx" class="lineitem"  title="FMT Program Management Plan 2015-07-06 (Neil)
+k:\@ads\Document Intake\FMT Program Management Plan 2015-07-06.docx
+282
+Deliv, NK, Plan, Program, Management
+"> FMT Program Management Plan 2015-07-06 (Neil) (Other) </a></li>
+<li><a  href="k:\@ads\Document Intake\Overview of the Approach used to GC Grants and Contribution Strategic Business Design-v3.docx" class="lineitem"  title="Overview of the Approach used to GC Grants and Contribution Strategic Business Design-v3
+k:\@ads\Document Intake\Overview of the Approach used to GC Grants and Contribution Strategic Business Design-v3.docx
+283
+
+"> Overview of the Approach used to GC Grants and Contribution Strategic Business Design-v3 (Other) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16476706" class="lineitem"  title="Data Structure Map - EIRA.pptx
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16476706
+284
+EIRA, RR
+"> Data Structure Map - EIRA.pptx (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16402214" class="lineitem"  title="EIRA - Pilot Sucess Factors - Categories 2015 06 01 v2.pptx
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16402214
+285
+EIRA, RR,Pilot
+"> EIRA - Pilot Sucess Factors - Categories 2015 06 01 v2.pptx (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16686296" class="lineitem"  title="EIRA - Pilot High Level Scope
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16686296
+286
+EIRA, RR,Pilot
+"> EIRA - Pilot High Level Scope (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16397983" class="lineitem"  title="Roadmap - EIRA-2.pptx
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16397983
+287
+EIRA, RR,plan
+"> Roadmap - EIRA-2.pptx (gcdocs) </a></li>
+<li><a  href="http://laws-lois.justice.gc.ca/eng/acts/p-38.2/FullText.html" class="lineitem"  title="Department of Public Works and Government Services Act
+http://laws-lois.justice.gc.ca/eng/acts/p-38.2/FullText.html
+288
+Act, PWGSC,PAYMOD
+"> Department of Public Works and Government Services Act (Web) </a></li>
+<li><a  href="http://laws-lois.justice.gc.ca/eng/acts/F-11/" class="lineitem"  title="Financial Administration Act
+http://laws-lois.justice.gc.ca/eng/acts/F-11/
+289
+Act, FM
+"> Financial Administration Act (Web) </a></li>
+<li><a  href="http://www.pco.gc.ca/oic-ddc.asp?lang=eng&DoReset=Y&page=secretariats#search" class="lineitem"  title="Search Orders In Council (OICs)
+http://www.pco.gc.ca/oic-ddc.asp?lang=eng&DoReset=Y&page=secretariats#search
+290
+
+"> Search Orders In Council (OICs) (Web) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll?func=ll&objId=17113246&objAction=browse&viewType=1" class="lineitem"  title="PAYMOD GCDOCS
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll?func=ll&objId=17113246&objAction=browse&viewType=1
+291
+PAYMOD, Processes
+"> PAYMOD GCDOCS (Other) </a></li>
+<li><a  href="k:\@ads\Document Intake\Pay Modernization - Work Plan_Draft 1_ July 17.pptx" class="lineitem"  title="Pay Modernization - Work Plan_Draft 1_ July 17
+k:\@ads\Document Intake\Pay Modernization - Work Plan_Draft 1_ July 17.pptx
+292
+PAYMOD, plan
+"> Pay Modernization - Work Plan_Draft 1_ July 17 (Other) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/9560978" class="folder"  title="CBSA LEAD Deliverables Final Functions
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/9560978
+293
+Deliv, LEAD, CBSA
+"> CBSA LEAD Deliverables Final Functions (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/9548969" class="folder"  title="LEAD Alignment Centre Deliverables Final 2014
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/9548969
+294
+Deliv, LEAD, CBSA, AMC
+"> LEAD Alignment Centre Deliverables Final 2014 (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/3281458" class="lineitem"  title="TA Requests 2013-2014
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/3281458
+296
+Admin, TA
+"> TA Requests 2013-2014 (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/12771245" class="lineitem"  title="FM Policy Draft Logic Model
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/12771245
+297
+
+"> FM Policy Draft Logic Model (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/17081269" class="lineitem"  title="CIOB List of IT Applications
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/17081269
+298
+
+"> CIOB List of IT Applications (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16351190" class="lineitem"  title="Department Profiling
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16351190
+299
+
+"> Department Profiling (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/6117896" class="lineitem"  title="OAG Audits with TBS Implications
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/6117896
+300
+
+"> OAG Audits with TBS Implications (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/2000" class="folder"  title="Enterprise
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/2000
+301
+
+"> Enterprise (gcdocs) </a></li>
+<li><a  href="http://gcintranet.tpsgc-pwgsc.gc.ca/rg/scr-csr/index-eng.html" class="lineitem"  title="RG Central Systems
+http://gcintranet.tpsgc-pwgsc.gc.ca/rg/scr-csr/index-eng.html
+303
+
+"> RG Central Systems (Web) </a></li>
+<li><a  href="http://ssc-spc.gc.ca/pages/prtnrorg-orgprtnrs-eng.html" class="lineitem"  title="SSC Supported Departments
+http://ssc-spc.gc.ca/pages/prtnrorg-orgprtnrs-eng.html
+304
+
+"> SSC Supported Departments (Web) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16225016" class="lineitem"  title="Info Atlas
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16225016
+305
+
+"> Info Atlas (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16709809" class="lineitem"  title="Info Altlas data file
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/16709809
+306
+
+"> Info Altlas data file (gcdocs) </a></li>
+<li><a  href="http://www.pco-bcp.gc.ca/index.asp?lang=eng&page=information&sub=publications&doc=gdm-gsm/doc-eng.htm" class="lineitem"  title="Guidance for Deputy Ministers
+http://www.pco-bcp.gc.ca/index.asp?lang=eng&page=information&sub=publications&doc=gdm-gsm/doc-eng.htm
+307
+Authorities,Machinery, DM
+"> Guidance for Deputy Ministers (Web) </a></li>
+<li><a  href="http://wet-boew.github.io/wet-boew/index-en.html" class="lineitem"  title="Web Experience Toolkit (WET
+http://wet-boew.github.io/wet-boew/index-en.html
+308
+Web, Open
+"> Web Experience Toolkit (WET (Web) </a></li>
+<li><a  href="http://www.gcpedia.gc.ca/wiki/Service_Oriented_Architecture" class="lineitem"  title="Service Oriented Architecture SOA
+http://www.gcpedia.gc.ca/wiki/Service_Oriented_Architecture
+309
+Architecture
+"> Service Oriented Architecture SOA (Web) </a></li>
+<li><a  href="http://www.gcpedia.gc.ca/wiki/Category:Enterprise_Architecture" class="lineitem"  title="Enterprise Architecture on GcPedia
+http://www.gcpedia.gc.ca/wiki/Category:Enterprise_Architecture
+310
+Architecture
+"> Enterprise Architecture on GcPedia (Web) </a></li>
+<li><a  href="https://msdn.microsoft.com/en-us/library/bb466232.aspx?f=255&MSPPError=-2147217396" class="lineitem"  title="A Comparison of the Top Four Enterprise-Architecture Methodologies
+https://msdn.microsoft.com/en-us/library/bb466232.aspx?f=255&MSPPError=-2147217396
+311
+Architecture
+"> A Comparison of the Top Four Enterprise-Architecture Methodologies (Other) </a></li>
+<li><a  href="http://www.collectionscanada.gc.ca/webarchives/20071212130456/http://www.tbs-sct.gc.ca/fap-paf/oss-ll/position_e.asp" class="lineitem"  title="CIOB Open Source Software Position Paper (2004)
+http://www.collectionscanada.gc.ca/webarchives/20071212130456/http://www.tbs-sct.gc.ca/fap-paf/oss-ll/position_e.asp
+312
+Architecture
+"> CIOB Open Source Software Position Paper (2004) (Web) </a></li>
+<li><a  href="http://help.sap.com/businessobject/product_guides/boexir4/en/xi4_whats_new_en.pdf" class="lineitem"  title="SAP BusinessObjects Business Intelligence Suite (Version 4.0 2015-02-19)
+http://help.sap.com/businessobject/product_guides/boexir4/en/xi4_whats_new_en.pdf
+313
+SAP
+"> SAP BusinessObjects Business Intelligence Suite (Version 4.0 2015-02-19) (Web) </a></li>
+<li><a  href="http://www.scc.cc/voice/ArtArchitecture%20Is%20Architecture.pdf" class="lineitem"  title="Zachman - Architecture Is Architecture Is Architecture
+http://www.scc.cc/voice/ArtArchitecture%20Is%20Architecture.pdf
+314
+Architecture
+"> Zachman - Architecture Is Architecture Is Architecture (Web) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocspdav/nodes/16225016/PLUS_PROD/index-eng.html#start" class="lineitem"  title="InfoBase+
+https://gcdocsp.tbssct.local/gcdocspdav/nodes/16225016/PLUS_PROD/index-eng.html#start
+315
+Architecture, EIRA
+"> InfoBase+ (Other) </a></li>
+<li><a  href="http://www.tbs-sct.gc.ca/reports-rapports/cc-se/index-eng.asp" class="lineitem"  title="Inventory of Gornement of Canada Organizations
+http://www.tbs-sct.gc.ca/reports-rapports/cc-se/index-eng.asp
+316
+Architecture, EIRA
+"> Inventory of Gornement of Canada Organizations (Web) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11652916" class="lineitem"  title="FMT Salary Planning Forecasting Analysis Draft v1 5.docx
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11652916
+317
+SFT
+"> FMT Salary Planning Forecasting Analysis Draft v1 5.docx (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11655733" class="lineitem"  title="FMT Strategy and Conceptual Design for Planning & Performance-DRAFT v1.0.docx Functions
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/11655733
+318
+BPC
+"> FMT Strategy and Conceptual Design for Planning & Performance-DRAFT v1.0.docx Functions (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15713657" class="lineitem"  title="Define and Manage Requirements with IBM RRC
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/15713657
+319
+Model, Tool, Reqts
+"> Define and Manage Requirements with IBM RRC (gcdocs) </a></li>
+<li><a  href=": http://www.learnquest.com/courses.aspx?categoryid=42&subcategoryid=353" class="lineitem"  title="IBM Rational Courses Offering
+: http://www.learnquest.com/courses.aspx?categoryid=42&subcategoryid=353
+320
+Model, Tool, Traning
+"> IBM Rational Courses Offering (Other) </a></li>
+<li><a  href=": https://www.youtube.com/playlist?list=PLZGO0qYNSD4X757uGAmkWhieGknL4asHl" class="lineitem"  title="IBM Rational Youtube Channel
+: https://www.youtube.com/playlist?list=PLZGO0qYNSD4X757uGAmkWhieGknL4asHl
+321
+Model, Tool
+"> IBM Rational Youtube Channel (Other) </a></li>
+<li><a  href=": https://www.ibm.com/developerworks/community/groups/service/html/communityview?communityUuid=30a4b582-9075-4556-85a8-41818f205d94" class="lineitem"  title="IBM Rational Community
+: https://www.ibm.com/developerworks/community/groups/service/html/communityview?communityUuid=30a4b582-9075-4556-85a8-41818f205d94
+322
+Model, Tool
+"> IBM Rational Community (Other) </a></li>
+<li><a  href="http://www.horizons.gc.ca/eng/content/history" class="lineitem"  title="Policy Horizons Canada
+http://www.horizons.gc.ca/eng/content/history
+323
+Policy
+"> Policy Horizons Canada (Web) </a></li>
+<li><a  href="http://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=12025" class="lineitem"  title="Common Services Policy
+http://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=12025
+324
+Policy, SSVCS
+"> Common Services Policy (Web) </a></li>
+<li><a  href="http://www.tbs-sct.gc.ca/report/orp/siglist-eng.asp" class="lineitem"  title="TBS Publications including audits
+http://www.tbs-sct.gc.ca/report/orp/siglist-eng.asp
+325
+Audit
+"> TBS Publications including audits (Web) </a></li>
+<li><a  href="http://www.tbs-sct.gc.ca/pol/index-eng.aspx" class="lineitem"  title="TBS Policy Suite
+http://www.tbs-sct.gc.ca/pol/index-eng.aspx
+326
+Policy
+"> TBS Policy Suite (Web) </a></li>
+<li><a  href="http://www.leadingpractice.com/tools/presentations/" class="lineitem"  title="LEADing Practice Web Site
+http://www.leadingpractice.com/tools/presentations/
+327
+Architecture, Model
+"> LEADing Practice Web Site (Web) </a></li>
+<li><a  href="http://www.techniques-ingenieur.fr/fiche-pratique/genie-industriel-th6/deployer-l-innovation-dt30/concevoir-les-architectures-fonctionnelle-et-physique-des-systemes-complexes-0271/" class="lineitem"  title="Techniques de l'ingénieur
+http://www.techniques-ingenieur.fr/fiche-pratique/genie-industriel-th6/deployer-l-innovation-dt30/concevoir-les-architectures-fonctionnelle-et-physique-des-systemes-complexes-0271/
+328
+Architecture, Model
+"> Techniques de l'ingénieur (Web) </a></li>
+<li><a  href="https://fr.wikipedia.org/wiki/Urbanisation_(informatique)" class="lineitem"  title="Urbanisation
+https://fr.wikipedia.org/wiki/Urbanisation_(informatique)
+329
+Architecture, Model
+"> Urbanisation (Other) </a></li>
+<li><a  href="http://www.onmap-visual.com/index.php/fr/component/content/article?id=393" class="lineitem"  title="On Map - L'entreprise visuelle
+http://www.onmap-visual.com/index.php/fr/component/content/article?id=393
+330
+Model
+"> On Map - L'entreprise visuelle (Web) </a></li>
+<li><a  href="http://blog.xebia.fr/2008/04/10/urbanisation-pour-les-nuls/" class="lineitem"  title="Urbanisation pour les nuls
+http://blog.xebia.fr/2008/04/10/urbanisation-pour-les-nuls/
+331
+Architecture
+"> Urbanisation pour les nuls (Web) </a></li>
+<li><a  href="http://www.opengroup.org/" class="lineitem"  title="Open Group TOGAF Archimate
+http://www.opengroup.org/
+332
+Model
+"> Open Group TOGAF Archimate (Web) </a></li>
+<li><a  href="http://earf.meraka.org.za/earfhome/about-the-earf" class="lineitem"  title="Enterprise Architecture Research Forum
+http://earf.meraka.org.za/earfhome/about-the-earf
+333
+Architecture
+"> Enterprise Architecture Research Forum (Web) </a></li>
+<li><a  href="http://www.ceisar.fr/" class="lineitem"  title="Centre d’Excellence en Architecture d’Entreprise
+http://www.ceisar.fr/
+334
+
+"> Centre d’Excellence en Architecture d’Entreprise (Web) </a></li>
+<li><a  href="http://www.gartner.com/it/page.jsp?id=1159617" class="lineitem"  title=" une étude sur les 10 pièges pour l’architecture d’entreprise (2009)
+http://www.gartner.com/it/page.jsp?id=1159617
+335
+
+">  une étude sur les 10 pièges pour l’architecture d’entreprise (2009) (Web) </a></li>
+<li><a  href="http://dsi.silicon.fr/gouvernance/architectes-dentreprise-snobes-mais-tenaces-167" class="lineitem"  title="Architectes d’entreprise : snobés mais tenaces (2010)
+http://dsi.silicon.fr/gouvernance/architectes-dentreprise-snobes-mais-tenaces-167
+336
+
+"> Architectes d’entreprise : snobés mais tenaces (2010) (Web) </a></li>
+<li><a  href="http://blog.octo.com/larchitecture-dentreprise-vision-metier-ou-technologique/" class="lineitem"  title="Blog Octo - EA
+http://blog.octo.com/larchitecture-dentreprise-vision-metier-ou-technologique/
+337
+
+"> Blog Octo - EA (Web) </a></li>
+<li><a  href="http://www.oag-bvg.gc.ca/internet/English/meth_lp_e_15716.html" class="lineitem"  title="Financial Managemetn Maturity Model
+http://www.oag-bvg.gc.ca/internet/English/meth_lp_e_15716.html
+338
+Model
+"> Financial Managemetn Maturity Model (Web) </a></li>
+<li><a  href="http://macklinir.com/irm_model/index.htm" class="lineitem"  title="Information Reference Model (IRM)
+http://macklinir.com/irm_model/index.htm
+339
+Model
+"> Information Reference Model (IRM) (Web) </a></li>
+<li><a  href="http://www.macklinir.com/gsrm_model/index.htm" class="lineitem"  title="Government Service Reference Model (GSRM)
+http://www.macklinir.com/gsrm_model/index.htm
+340
+Model
+"> Government Service Reference Model (GSRM) (Web) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/1364873" class="folder"  title="Human Resources Services Modernization
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/1364873
+341
+
+"> Human Resources Services Modernization (gcdocs) </a></li>
+<li><a  href="http://www.lirmm.fr/cogui/download.php" class="lineitem"  title="Cogui is a visual tool for building conceptual graph knowledge bases (KB)
+http://www.lirmm.fr/cogui/download.php
+342
+Model
+"> Cogui is a visual tool for building conceptual graph knowledge bases (KB) (Web) </a></li>
+<li><a  href="http://www.bpmhandbook.com/" class="lineitem"  title="The Complete BPM Handbook
+http://www.bpmhandbook.com/
+343
+Process, Model
+"> The Complete BPM Handbook (Web) </a></li>
+<li><a  href="http://www.adampease.org/OP/" class="lineitem"  title="Suggested Upper Merged Ontology (SUMO)
+http://www.adampease.org/OP/
+344
+Model
+"> Suggested Upper Merged Ontology (SUMO) (Web) </a></li>
+<li><a  href="http://wordnet.princeton.edu/wordnet/" class="lineitem"  title="Wordnet
+http://wordnet.princeton.edu/wordnet/
+345
+Model
+"> Wordnet (Web) </a></li>
+<li><a  href="https://mipsite.lsec.dnd.ca/Public%20Document%20Library/Forms/AllItems.aspx?RootFolder=%2FPublic%20Document%20Library%2F04%2DBaseline%5F3%2E1%2FInterface%2DSpecification%2FJC3IEDM" class="lineitem"  title="JC3IEDM- Joint Consultation, Command and Control Information Exchange Data Model
+https://mipsite.lsec.dnd.ca/Public%20Document%20Library/Forms/AllItems.aspx?RootFolder=%2FPublic%20Document%20Library%2F04%2DBaseline%5F3%2E1%2FInterface%2DSpecification%2FJC3IEDM
+346
+Model
+"> JC3IEDM- Joint Consultation, Command and Control Information Exchange Data Model (Other) </a></li>
+<li><a  href="https://mipsite.lsec.dnd.ca/Pages/WhatisMIP_3.aspx" class="lineitem"  title="Multilateral Interoperability Programme
+https://mipsite.lsec.dnd.ca/Pages/WhatisMIP_3.aspx
+347
+Architecture, Interop, Mil
+"> Multilateral Interoperability Programme (Other) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/17440586" class="lineitem"  title="Modernisation de la paye (CME)
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/17440586
+348
+Process, Pay
+"> Modernisation de la paye (CME) (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/17112683" class="lineitem"  title="Financial Management Business Processes (FM-BPs)
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/17112683
+349
+Process
+"> Financial Management Business Processes (FM-BPs) (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/17113246" class="lineitem"  title="Paymod (A&I)
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/17113246
+350
+Process,Pay, HR, FIN
+"> Paymod (A&I) (gcdocs) </a></li>
+<li><a  href="http://pshrprd.jbhunt.com/PSOL/pbooks/eng/psbooks/index.htm" class="lineitem"  title="PeopleBooks
+http://pshrprd.jbhunt.com/PSOL/pbooks/eng/psbooks/index.htm
+351
+Process, Peoplesoft, HR
+"> PeopleBooks (Web) </a></li>
+<li><a  href="https://docs.oracle.com/cd/E17355_01/hf91bpm0/" class="lineitem"  title="Oracle's PeopleSoft Enterprise Business Process Maps
+https://docs.oracle.com/cd/E17355_01/hf91bpm0/
+352
+Process, Peoplesoft, HR
+"> Oracle's PeopleSoft Enterprise Business Process Maps (Other) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/2448135" class="lineitem"  title="FMPD Policy Instrument Assignments
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/2448135
+353
+Policy, FM
+"> FMPD Policy Instrument Assignments (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/2915558" class="lineitem"  title="TBS Information Sources
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/2915558
+354
+Research
+"> TBS Information Sources (gcdocs) </a></li>
+<li><a  href="http://infosite.tbs-sct.gc.ca/services/lrs-bsr/rdb-bdr/index_e.aspx" class="lineitem"  title="TBS Research Databases
+http://infosite.tbs-sct.gc.ca/services/lrs-bsr/rdb-bdr/index_e.aspx
+355
+Research
+"> TBS Research Databases (Web) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/4296822" class="lineitem"  title="MachineryOfGovernmentForPrinter
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/4296822
+356
+
+"> MachineryOfGovernmentForPrinter (gcdocs) </a></li>
+<li><a  href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/4309179" class="lineitem"  title="Data Warehouse Poster
+https://gcdocsp.tbssct.local/gcdocs/llisapi.dll/open/4309179
+357
+
+"> Data Warehouse Poster (gcdocs) </a></li>
+</DIV>
+
+</div><!-- end div_>
+</ul>+VbCrlf</body></html>
+
