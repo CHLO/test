@@ -164,23 +164,6 @@ function show_onlys(id) {
 <p><script language="javascript" type="text/javascript">buildBreadCrumbTrail();</script><p>
 
 <!----------------------------------------------------------------------------------------------------------------------->
-<div class="class_all" id="div_topmenu" style="text-align:center">
-	<a href="ADSNEW.html" class="button white small">Proposed ADS</a>
-	<a href="ADS-Map.mht" class="button white small">ADS Map</a>
-	<a href="FMT PMO Instrument Map_Draft.pdf" class="button white small">PMO Instrument Map</a>
-	<a href="ADS_TOC.html" class="button white small">ADS Table of Content</a>
-	<a href="ADS_Annexes.html" class="button white small">ADS Annexes</a>
-	<a href="#" onclick="toggle_visibility('div_all')" class="button white small">Show CHL Links</a>
-	<a class="colexp" onclick="toggle_visibility('div_menu2')" title="show CHL menu"> . </a>
-	<div class="class_all" id="div_menu2" >
-		<br />
-		<a href="Hitme.html" class="button red small">Hit me</a>
-		<a href="tests.html" class="button red small">TESTS me</a>
-		<a href="ADS-Map.mht" class="button red small">ADS</a> 
-		<a href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll?func=ll&objId=388421&objAction=browse&sort=name" class="button green small">TBS-CSS-EA</a>
-		<a href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll?func=ll&objId=388027&objAction=browse&sort=name" class="button green small">TBS-CSS-IMTD-Governance, Architecture and Planning</a>
-	</div> <!-- end div_menu2-->
-</div><!-- end div_topmenu @@@ -->
 <script language="javascript" type="text/javascript">toggle_visibility('div_menu2');</script>
 <br />
 <hr />
