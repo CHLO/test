@@ -1,0 +1,558 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>ADS TOC</title>
+<style>
+body 	{background: #fff; font-size :12px; color: #000000; font-family: calibri;} /*arial, helvetica, verdana, sans-serif;*/
+a 	{color:#00f;text-decoration:none;}
+xa 	{color:#00f;background-color:#fff;text-decoration:none;font-weight:normal;margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px;} /*top right bottom left*/
+a:hover 	{color:#fff;background-color:#00c;}
+a:active 	{color:#00f;}
+a:visited	{color:#00f;}
+
+ul, li {list-style: circle;}
+ul li , ul li a {font-weight: normal;}
+ul li a {font-weight: bold;}
+ul li ul li a {font-weight: normal;}
+ul li ul li ul li{list-style: disc;}
+
+h1 	{font-size: 120%em; font-style: normal; font-weight: bold; text-transform: capitalize; color: #0066CC; margin-top: 0px;    margin-right: 0px;    margin-bottom: 0px;    margin-left: 0px;}
+h2 	{font-size: 100%; font-style: normal; font-weight: bold; text-transform: capitalize; color: #0066CC; margin-top: 0px;    margin-right: 0px;    margin-bottom: 0px;    margin-left: 0px;}   
+h3 	{font-size: 100%; font-style: normal; font-weight: bold; text-transform: capitalize; color: #0066CC; margin-top: 0px;    margin-right: 0px;    margin-bottom: 0px;    margin-left: 0px;}
+h4	{font-size: 100%; font-style: normal; font-weight: bold; text-transform: capitalize; color: #996600; margin-top: 0px;    margin-right: 0px;    margin-bottom: 0px;    margin-left: 0px;}
+h5 	{font-size: 100%; font-style: normal; font-weight: bold; text-transform: capitalize; color: #006699; margin-top: 0px;    margin-right: 0px;    margin-bottom: 0px;    margin-left: 0px;}
+h6 	{font-size: 100%; font-style: normal; font-weight: bold; text-transform: capitalize; color: #006699;    margin-top: 1px;    margin-right: 0px;    margin-bottom: 0px;    margin-left: 0px;}    
+td { font-size: 80%; font-family: arial, helvetica, verdana, sans-serif; }
+img { border-style: none; }
+
+div.x {width:200px;
+height:400px;
+background-color: yellow;
+/* Rotate div */
+    
+-ms-transform: rotate( 4deg); /* IE 9 */
+    
+-webkit-transform: rotate(30deg); /* Chrome, Safari, Opera */
+    
+transform: rotate(30deg); /* Standard syntax */
+
+}
+
+
+.button {
+	display: inline-block;
+	zoom: 1; /* zoom and *display = ie7 hack for display:inline-block */
+	*display: inline;
+	vertical-align: baseline;
+	margin: 0 2px;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	font: 14px/100% Arial, Helvetica, sans-serif;
+	padding: .5em 2em .55em;
+	text-shadow: 0 1px 1px rgba(0,0,0,.3);
+	-webkit-border-radius: .5em; 
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+.button:hover {text-decoration: none;}
+.button:active {position: relative;top: 1px;}
+.bigrounded {-webkit-border-radius: 2em; -moz-border-radius: 2em; border-radius: 2em;}
+.medium {font-size: 12px;padding: .4em 1.5em .42em;}
+.small {font-size: 11px;padding: .2em 1em .275em;}
+
+/* white */.white {color: #606060; border: solid 1px #b7b7b7; background: #fff; background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ededed)); 
+	background: -moz-linear-gradient(top,  #fff,  #ededed); filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed');}
+.white:hover { background: #ededed; background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#dcdcdc)); 
+	background: -moz-linear-gradient(top,  #fff,  #dcdcdc); filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#dcdcdc'); }
+.white:active {color: #999; background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#fff)); background: -moz-linear-gradient(top,  #ededed,  #fff);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#ffffff');}
+/* blue */.blue {color: #d9eef7; border: solid 1px #0076a3; background: #0095cd; background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
+	background: -moz-linear-gradient(top,  #00adee,  #0078a5); filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#00adee', endColorstr='#0078a5');}
+.blue:hover { background: #007ead; 	background: -webkit-gradient(linear, left top, left bottom, from(#0095cc), to(#00678e)); 
+	background: -moz-linear-gradient(top,  #0095cc,  #00678e); filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#0095cc', endColorstr='#00678e'); }
+.blue:active { color: #80bed6;  background: -webkit-gradient(linear, left top, left bottom, from(#0078a5), to(#00adee)); 
+	background: -moz-linear-gradient(top,  #0078a5,  #00adee);filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#0078a5', endColorstr='#00adee'); }
+/* red */.red { color: #f7d9ee; border: solid 1px #a30076; background: #cd0095; background: -webkit-gradient(linear, left top, left bottom, from(#ee00ad), to(#a50078));
+	background: -moz-linear-gradient(top,  #ee00ad,  #a50078); filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ee00ad', endColorstr='#a50078'); }
+.red:hover { background: #ad007e; background: -webkit-gradient(linear, left top, left bottom, from(#cc0095), to(#8e0067)); 
+	background: -moz-linear-gradient(top,  #cc0095,  #8e0067); filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#cc0095', endColorstr='#8e0067'); }
+.red:active { color: #d680be; background: -webkit-gradient(linear, left top, left bottom, from(#a50078), to(#ee00ad)); 	
+	background: -moz-linear-gradient(top,  #a50078,  #ee00ad);filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#a50078', endColorstr='#ee00ad');}
+/* green */.green { color: #d9f7ee; border: solid 1px #00a376; background: #00cd95; background: -webkit-gradient(linear, left top, left bottom, from(#00eead), to(#00a578));
+	background: -moz-linear-gradient(top,  #00eead,  #00a578); filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#00eead', endColorstr='#00a578'); }
+.green:hover { background: #00ad7e; background: -webkit-gradient(linear, left top, left bottom, from(#00cc95), to(#008e67)); 
+	background: -moz-linear-gradient(top,  #00cc95,  #008e67); filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#00cc95', endColorstr='#008e67'); }
+.green:active { color: #80d6be; background: -webkit-gradient(linear, left top, left bottom, from(#00a578), to(#00eead)); 
+	background: -moz-linear-gradient(top,  #00a578,  #00eead); filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#00a578', endColorstr='#00eead'); }
+/* purple */.purple { color: #eed9f7; border: solid 1px #00a376; background: #9500cd; background: -webkit-gradient(linear, left top, left bottom, from(#ad00ee), to(#7800a5));
+	background: -moz-linear-gradient(top,  #ad00ee,  #7800a5); filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ad00ee', endColorstr='#7800a5'); }
+.purple:hover { background: #7e00ad; background: -webkit-gradient(linear, left top, left bottom, from(#9500cc), to(#67008e)); 
+	background: -moz-linear-gradient(top,  #9500cc,  #67008e); filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#9500cc', endColorstr='#67008e'); }
+.purple:active { color: #be80d6; background: -webkit-gradient(linear, left top, left bottom, from(#7800a5), to(#ad00ee)); 
+	background: -moz-linear-gradient(top,  #7800a5,  #ad00ee); filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#7800a5', endColorstr='#ad00ee'); }
+/* yellow */
+.yellow { color: #eed9f7; border: solid 1px #00a376; background: #95cd00; background: -webkit-gradient(linear, left top, left bottom, from(#ad00ee), to(#78a500));
+	background: -moz-linear-gradient(top,  #ad00ee,  #78a500); filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#adee00', endColorstr='#78a500'); }
+.yellow:hover { background: #7ead00; background: -webkit-gradient(linear, left top, left bottom, from(#95cc00), to(#678e00)); 
+	background: -moz-linear-gradient(top,  #95cc00,  #678e00); filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#95cc00', endColorstr='#678e00'); }
+.yellow:active { color: #be80d6; background: -webkit-gradient(linear, left top, left bottom, from(#78a500), to(#adee00)); 
+	background: -moz-linear-gradient(top,  #78a500,  #adee00); filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#78a500', endColorstr='#adee00'); }
+
+/* Pure css trees*/
+.clt, .clt ul, .clt li {list-style: none; position: relative; }
+.clt ul { list-style: none;    padding-left:16px;}
+.clt li::before, .clt li::after { content: ""; position: absolute; left: -12px; }
+.clt li::before { border-top: 1px solid #000;  top: 10px; width: 8px; height: 0; }
+.clt li::after { border-left: 1px solid #000;  height: 100%;  width: 0px; top: 2px; }
+.clt ul > li:last-child::after { height: 8px; }
+
+</style>
+
+<script>
+ function EvalSound(soundobj) {
+  var thissound=document.getElementById(soundobj);
+  thissound.play();
+}
+		function buildDepth(iterations)
+		{
+			var iterations=iterations-3;
+			var depthStr="";
+			for (i=0;i<iterations;i++)
+			{
+				depthStr=depthStr + "../";
+			}
+			return depthStr;
+		}
+		function buildBreadCrumbTrail()
+		{
+			var constituentFolders = new Array();
+			var currentURL = document.location.toString();
+			constituentFolders=currentURL.split("/");
+			var outputStr="";
+			for (count=2;count<(constituentFolders.length-1);count++)
+			{
+				outputStr=outputStr + " : <a href='" + buildDepth((constituentFolders.length-count)+1) + "index.html' title='parent folder'>" + constituentFolders[count] + "</a>";
+			}
+			document.write(outputStr);
+		}
+
+function toggle_visibility(id) { 
+  var e = document.getElementById(id); 
+  if(e.style.display == 'none') e.style.display = 'block'; 
+  else e.style.display = 'none'; 
+}
+function show_onlys(id) { 
+  var e = document.getElementsByTagName(thistag);
+    for(i=0;i<ele.length;i++){
+        var divelement = e[i];
+        if(divelement.getAttribute("class") == thisclass) divelement.style.display = 'inline';
+        else divelement.style.display = 'none';
+    }
+}
+</script>
+
+</head>
+
+<!----------------------------------------------------------------------------------------------------------------------->
+<body>
+
+<p><script language="javascript" type="text/javascript">buildBreadCrumbTrail();</script><p>
+
+<!----------------------------------------------------------------------------------------------------------------------->
+<div class="class_all" id="div_topmenu" style="text-align:center">
+	<a href="ADSNEW.html" class="button white small">Proposed ADS</a>
+	<a href="ADS-Map.mht" class="button white small">ADS Map</a>
+	<a href="FMT PMO Instrument Map_Draft.pdf" class="button white small">PMO Instrument Map</a>
+	<a href="ADS_TOC.html" class="button white small">ADS Table of Content</a>
+	<a href="ADS_Annexes.html" class="button white small">ADS Annexes</a>
+	<a href="#" onclick="toggle_visibility('div_all')" class="button white small">Show CHL Links</a>
+	<a class="colexp" onclick="toggle_visibility('div_menu2')" title="show CHL menu"> . </a>
+	<div class="class_all" id="div_menu2" >
+		<br />
+		<a href="Hitme.html" class="button red small">Hit me</a>
+		<a href="tests.html" class="button red small">TESTS me</a>
+		<a href="ADS-Map.mht" class="button red small">ADS</a> 
+		<a href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll?func=ll&objId=388421&objAction=browse&sort=name" class="button green small">TBS-CSS-EA</a>
+		<a href="https://gcdocsp.tbssct.local/gcdocs/llisapi.dll?func=ll&objId=388027&objAction=browse&sort=name" class="button green small">TBS-CSS-IMTD-Governance, Architecture and Planning</a>
+	</div> <!-- end div_menu2-->
+</div><!-- end div_topmenu @@@ -->
+<script language="javascript" type="text/javascript">toggle_visibility('div_menu2');</script>
+<br />
+<hr />
+<div class="class_all" id="div_all">
+<br />
+
+
+<ul>
+<div class="clt"></ul></div></li><!-- end div div0 -->
+<li><a onclick="toggle_visibility('div1')"> + </a><a title="1 -  ( 1,1)">Architecture version 1.0</a>
+<div class="clt" id="div1"><ul>
+<li> - <a title="2 -  ( -1,0)">Revision History</a></li>
+<li> - <a title="3 -  ( 0,0)">Revision Notes</a></li>
+<li> - <a title="4 -  ( 0,0)">Planned Revision</a></li>
+<li><a onclick="toggle_visibility('div2')"> + </a><a title="5 -  ( 0,1)">Executive Summary</a>
+<div class="clt" id="div2"><ul>
+<li> - <a title="6 -  ( -1,0)">Evolutionary Approach</a></li>
+<li> - <a title="7 -  ( 0,0)">Architecture principles</a></li>
+<li> - <a title="8 -  ( 0,0)">Act as One Enterprise</a></li>
+<li> - <a title="9 -  ( 0,0)">Agile Architecture</a></li>
+<li> - <a title="10 -  ( 0,0)">Just in time architecture (opportunistic)</a></li>
+<li> - <a title="11 -  ( 0,0)">Just enough requirements</a></li>
+<li> - <a title="12 -  ( 0,0)">Business Process Design Process</a></li>
+<li> - <a title="13 -  ( 0,0)">Just in time Release Model</a></li>
+<li> - <a title="14 -  ( 0,0)">Managed Risk</a></li>
+<li> - <a title="15 -  ( 0,0)">Common Financial Business Language</a></li>
+<li> - <a title="16 -  ( 0,0)">Information Strategy and Data Preparedness Assessment</a></li>
+<li> - <a title="17 -  ( 0,0)">Target Information Model (TIM)</a></li>
+<li> - <a title="18 -  ( 0,0)">Transformation Application Service (TAS)</a></li>
+<li> - <a title="19 -  ( 0,0)">The three solutions streams</a></li>
+<li> - <a title="20 -  ( 0,0)">Enterprise Solution</a></li>
+<li> - <a title="21 -  ( 0,0)">Enterprise Reporting and Analytics Stream</a></li>
+<li> - <a title="22 -  ( 0,0)">Salary Forecasting Tools Replacement</a></li>
+<li> - <a title="23 -  ( 0,0)">Enterprise Service Delivery</a></li>
+<li> - <a title="24 -  ( 0,0)">SAP HANA</a></li>
+<li> - <a title="25 -  ( 0,0)">SAP Simple</a></li>
+<li> - <a title="26 -  ( 0,0)">Security considerations</a></li>
+<li> - <a title="27 -  ( 0,-1)">Executive Summary Conclusion</a></li>
+</ul></div></li><!-- end div div2 -->
+<li><a onclick="toggle_visibility('div3')"> + </a><a title="28 -  ( 1,1)">About This Document</a>
+<div class="clt" id="div3"><ul>
+<li> - <a title="29 -  ( -1,-1)">Document structure</a></li>
+</ul></div></li><!-- end div div3 -->
+<li><a onclick="toggle_visibility('div4')"> + </a><a title="30 -  ( 1,1)">Financial Management Overview</a>
+<div class="clt" id="div4"><ul>
+<li> - <a title="31 -  ( -1,0)">Financial Management</a></li>
+<li> - <a title="32 -  ( 0,0)">Financial Management Processes</a></li>
+<li> - <a title="33 -  ( 0,0)">Financial Information</a></li>
+<li> - <a title="34 -  ( 0,0)">Financial Management Organizations</a></li>
+<li> - <a title="35 -  ( 0,0)">Financial Management Systems</a></li>
+<li> - <a title="36 -  ( 0,0)">Planning, Budgeting and Forecasting</a></li>
+<li> - <a title="37 -  ( 0,0)">Limited progress towards standardization</a></li>
+<li> - <a title="38 -  ( 0,-1)">Gaps in Enterprise-Wide Information</a></li>
+</ul></div></li><!-- end div div4 -->
+<li><a onclick="toggle_visibility('div5')"> + </a><a title="39 -  ( 1,1)">FMT Architecture Overview</a>
+<div class="clt" id="div5"><ul>
+<li> - <a title="40 -  ( -1,0)">Current Environment</a></li>
+<li> - <a title="41 -  ( 0,0)">Drivers for Change</a></li>
+<li> - <a title="42 -  ( 0,0)">FMT Objectives</a></li>
+<li> - <a title="43 -  ( 0,0)">FMT outcomes</a></li>
+<li> - <a title="44 -  ( 0,0)">Business Case Requirements</a></li>
+<li> - <a title="45 -  ( 0,-1)">Assumptions, Dependencies, Constraints</a></li>
+</ul></div></li><!-- end div div5 -->
+<li><a onclick="toggle_visibility('div6')"> + </a><a title="46 -  ( 1,1)">Architecture and Design Considerations</a>
+<div class="clt" id="div6"><ul>
+<li> - <a title="47 -  ( -1,0)">Architecture Specification versus Implementation options</a></li>
+<li> - <a title="48 -  ( 0,0)">Target-State Enterprise Model for Financial Management</a></li>
+<li> - <a title="49 -  ( 0,0)">Evolutionary Approach</a></li>
+<li> - <a title="50 -  ( 0,0)">Program Governance</a></li>
+<li> - <a title="51 -  ( 0,-1)">KEY Architectural Concepts</a></li>
+</ul></div></li><!-- end div div6 -->
+<li><a onclick="toggle_visibility('div7')"> + </a><a title="52 -  ( 1,1)">Act as One Enterprise</a>
+<div class="clt" id="div7"><ul>
+<li> - <a title="53 -  ( -1,0)">Hybrid Consolidation-Federation</a></li>
+<li> - <a title="54 -  ( 0,-1)">More than technology</a></li>
+</ul></div></li><!-- end div div7 -->
+<li><a onclick="toggle_visibility('div8')"> + </a><a title="55 -  ( 1,1)">Agile Architecture</a>
+<div class="clt" id="div8"><ul>
+<li> - <a title="56 -  ( -1,0)">Just in time architecture (opportunistic)</a></li>
+<li> - <a title="57 -  ( 0,-1)">Just enough requirements</a></li>
+</ul></div></li><!-- end div div8 -->
+<li><a onclick="toggle_visibility('div9')"> + </a><a title="58 -  ( 1,1)">Just in time Release Model</a>
+<div class="clt" id="div9"><ul>
+<li> - <a title="59 -  ( -1,0)">Major Release</a></li>
+<li> - <a title="60 -  ( 0,-1)">Minor Release</a></li>
+</ul></div></li><!-- end div div9 -->
+<li><a onclick="toggle_visibility('div10')"> + </a><a title="61 -  ( 1,1)">Managing Risk – Improve ROI</a>
+<div class="clt" id="div10"><ul>
+<li> - <a title="62 -  ( -1,-1)">Hybrid Consolidation – Federation</a></li>
+</ul></div></li><!-- end div div10 -->
+<li><a onclick="toggle_visibility('div11')"> + </a><a title="63 -  ( 1,1)">Common Financial Business Language</a>
+<div class="clt" id="div11"><ul>
+<li> - <a title="64 -  ( -1,-1)">CBFL and TIM</a></li>
+</ul></div></li><!-- end div div11 -->
+<li><a onclick="toggle_visibility('div12')"> + </a><a title="65 -  ( 1,1)">Managing Complexity</a>
+<div class="clt" id="div12"><ul>
+<li> - <a title="66 -  ( -1,0)">Too “New”</a></li>
+<li> - <a title="67 -  ( 0,-1)">Too Complex</a></li>
+</ul></div></li><!-- end div div12 -->
+<li><a onclick="toggle_visibility('div13')"> + </a><a title="68 -  ( 1,1)">Solution Architecture</a>
+<div class="clt" id="div13"><ul>
+<li> - <a title="69 -  ( -1,0)">Program Approach: three solution Streams</a></li>
+<li> - <a title="70 -  ( 0,-1)">How does it all CONCEPTUALLY fit?</a></li>
+</ul></div></li><!-- end div div13 -->
+<li><a onclick="toggle_visibility('div14')"> + </a><a title="71 -  ( 1,1)">The three solution streams</a>
+<div class="clt" id="div14"><ul>
+<li> - <a title="72 -  ( -1,0)">Enterprise Reporting and Analytics</a></li>
+<li> - <a title="73 -  ( 0,0)">Enterprise Solution</a></li>
+<li> - <a title="74 -  ( 0,-1)">Enterprise Service Delivery</a></li>
+</ul></div></li><!-- end div div14 -->
+<li><a onclick="toggle_visibility('div15')"> + </a><a title="75 -  ( 1,1)">Information Strategy and Data Preparedness Assessment</a>
+<div class="clt" id="div15"><ul>
+<li> - <a title="76 -  ( -1,0)">Objectives</a></li>
+<li> - <a title="77 -  ( 0,0)">Key Findings</a></li>
+<li> - <a title="78 -  ( 0,-1)">Key Recommendations</a></li>
+</ul></div></li><!-- end div div15 -->
+<li><a onclick="toggle_visibility('div16')"> + </a><a title="79 -  ( 1,1)">Target Information Model</a>
+<div class="clt" id="div16"><ul>
+<li> - <a title="80 -  ( -1,0)">Information in the business</a></li>
+<li> - <a title="81 -  ( 0,0)">Aim of the Target Information Model</a></li>
+<li> - <a title="82 -  ( 0,0)">Information Strategy</a></li>
+<li> - <a title="83 -  ( 0,0)">The Knowledge Deficit</a></li>
+<li> - <a title="84 -  ( 0,0)">Data vs Information</a></li>
+<li> - <a title="85 -  ( 0,0)">Enterprise Master Data Management (MDM) Focus</a></li>
+<li> - <a title="86 -  ( 0,0)">TIM Definition and Implementation</a></li>
+<li> - <a title="87 -  ( 0,-1)">Gradual development of the TIM</a></li>
+</ul></div></li><!-- end div div16 -->
+<li><a onclick="toggle_visibility('div17')"> + </a><a title="88 -  ( 1,1)">Transformation Application Service (TAS)</a>
+<div class="clt" id="div17"><ul>
+<li> - <a title="89 -  ( -1,0)">TAS Example</a></li>
+<li> - <a title="90 -  ( 0,0)">TAS and TIM</a></li>
+<li> - <a title="91 -  ( 0,0)">TAS Conceptual Model</a></li>
+<li> - <a title="92 -  ( 0,-1)">TAS Components</a></li>
+</ul></div></li><!-- end div div17 -->
+<li><a onclick="toggle_visibility('div18')"> + </a><a title="93 -  ( 1,1)">Enterprise Solution:</a>
+<div class="clt" id="div18"><ul>
+<li> - <a title="94 -  ( -1,0)">What is an ERP?</a></li>
+<li> - <a title="95 -  ( 0,0)">True ERP</a></li>
+<li> - <a title="96 -  ( 0,0)">Current ERP situation</a></li>
+<li> - <a title="97 -  ( 0,0)">How to easily evaluate Customization of an SAP System?</a></li>
+<li> - <a title="98 -  ( 0,0)">Intended Use</a></li>
+<li> - <a title="99 -  ( 0,0)">New GL</a></li>
+<li> - <a title="100 -  ( 0,0)">Why a “Green field” Enterprise Solution?</a></li>
+<li> - <a title="101 -  ( 0,0)">SAP Enterprise Structure</a></li>
+<li> - <a title="102 -  ( 0,0)">Financial Coding Block</a></li>
+<li> - <a title="103 -  ( 0,0)">Total Cost of Ownership</a></li>
+<li> - <a title="104 -  ( 0,0)">SAP HANA for the Business Suite</a></li>
+<li> - <a title="105 -  ( 0,-1)">SAP HANA, ERA and TAS</a></li>
+</ul></div></li><!-- end div div18 -->
+<li><a onclick="toggle_visibility('div19')"> + </a><a title="106 -  ( 1,1)">Enterprise Reporting & Analytics</a>
+<div class="clt" id="div19"><ul>
+<li> - <a title="107 -  ( -1,-1)">Actual reporting environment</a></li>
+</ul></div></li><!-- end div div19 -->
+<li> - <a title="108 -  ( 1,0)">Planning and Forecasting</a></li>
+<li><a onclick="toggle_visibility('div20')"> + </a><a title="109 -  ( 0,1)">Salary Forecasting Tools Replacement</a>
+<div class="clt" id="div20"><ul>
+<li> - <a title="110 -  ( -1,0)">What is SFT?</a></li>
+<li> - <a title="111 -  ( 0,-1)">Replacing SFT</a></li>
+</ul></div></li><!-- end div div20 -->
+<li> - <a title="112 -  ( 1,0)">Enterprise Service Delivery (ESD) model</a></li>
+<li><a onclick="toggle_visibility('div21')"> + </a><a title="113 -  ( 0,1)">SAP Simple Finance for Public Sector</a>
+<div class="clt" id="div21"><ul>
+<li> - <a title="114 -  ( -1,0)">Executive summary</a></li>
+<li> - <a title="115 -  ( 0,0)">SAP Simple Finance benefits</a></li>
+<li> - <a title="116 -  ( 0,0)">SAP Simple a collaboration with Customers</a></li>
+<li> - <a title="117 -  ( 0,0)">The SAP Simple opportunity for GC</a></li>
+<li> - <a title="118 -  ( 0,0)">Co-Innovation benefits</a></li>
+<li> - <a title="119 -  ( 0,0)">Typical steps</a></li>
+<li> - <a title="120 -  ( 0,-1)">Architecture Recommendation</a></li>
+</ul></div></li><!-- end div div21 -->
+<li><a onclick="toggle_visibility('div22')"> + </a><a title="121 -  ( 1,1)">Security considerations</a>
+<div class="clt" id="div22"><ul>
+<li> - <a title="122 -  ( -1,0)">360°of Security Architecture</a></li>
+<li> - <a title="123 -  ( 0,0)">Authentication and Authorization Controls</a></li>
+<li> - <a title="124 -  ( 0,0)">Business Process Controls</a></li>
+<li> - <a title="125 -  ( 0,0)">Technical controls</a></li>
+<li> - <a title="126 -  ( 0,-1)">General recommendations</a></li>
+</ul></div></li><!-- end div div22 -->
+<li> - <a title="127 -  ( 1,0)">Definitions</a></li>
+<li> - <a title="128 -  ( 0,0)">Acronyms</a></li>
+<li><a onclick="toggle_visibility('div23')"> + </a><a title="129 -  ( 0,1)">Annex A: Architecture</a>
+<div class="clt" id="div23"><ul>
+<li> - <a title="130 -  ( -1,0)">Annex A1. Architecture Implementation Management Plan</a></li>
+<li> - <a title="131 -  ( 0,0)">Annex A2. Architecture Implementation Roadmap</a></li>
+<li> - <a title="132 -  ( 0,0)">Annex A3. Business Design Approach</a></li>
+<li> - <a title="133 -  ( 0,0)">Annex A4: FMT SAP development landscape in the context of TBS IMTD</a></li>
+<li> - <a title="134 -  ( 0,0)">Annex A5: New Business Area</a></li>
+<li> - <a title="135 -  ( 0,0)">Annex A6 – Finance and Material Management Business Requirements</a></li>
+<li> - <a title="136 -  ( 0,-1)">Annex A7 – FMT Overview – May 2014</a></li>
+</ul></div></li><!-- end div div23 -->
+<li><a onclick="toggle_visibility('div24')"> + </a><a title="137 -  ( 1,1)">Annex B: Enterprise Reporting and Analytics</a>
+<div class="clt" id="div24"><ul>
+<li> - <a title="138 -  ( -1,0)">Annex B1: Information Strategy and Data Preparedness Assessment</a></li>
+<li> - <a title="139 -  ( 0,0)">Annex B2: BPC - Information and Analytics Roadmap</a></li>
+<li> - <a title="140 -  ( 0,0)">Annex B3: Information/Data Strategy Revision</a></li>
+<li> - <a title="141 -  ( 0,0)">Annex B4: Salary Planning and Forecasting – BPC POC</a></li>
+<li> - <a title="142 -  ( 0,0)">Annex B5: FMT Information Model</a></li>
+<li> - <a title="143 -  ( 0,0)">Annex B6: Transformation Application Service Design (TAS)</a></li>
+<li> - <a title="144 -  ( 0,0)">Annex B7: TAS POC Plan</a></li>
+<li> - <a title="145 -  ( 0,0)">Annex B8: FMT Strategy and conceptual design</a></li>
+<li> - <a title="146 -  ( 0,-1)">Annex B9: TAS POC Design</a></li>
+</ul></div></li><!-- end div div24 -->
+<li><a onclick="toggle_visibility('div25')"> + </a><a title="147 -  ( 1,1)">Annex C: Enterprise Solution</a>
+<div class="clt" id="div25"><ul>
+<li> - <a title="148 -  ( -1,0)">Annex C1: GC Existing SAP ERP System Overview – May 2014</a></li>
+<li> - <a title="149 -  ( 0,0)">Annex C2 – FMT – SAP Simple Finance for Public Sector Co-innovation</a></li>
+<li> - <a title="150 -  ( 0,0)">Annex C3 - Technical Requirements Documents</a></li>
+<li> - <a title="151 -  ( 0,0)">Annex C4 – Consolidation and process harmonization of SAP systems – Accenture</a></li>
+<li> - <a title="152 -  ( 0,0)">Annex C5 – Managing SAP ERP Upgrade with EHPs – Colgate Palmolive</a></li>
+<li> - <a title="153 -  ( 0,0)">Annex C6 – New GL and Document Splitting</a></li>
+<li> - <a title="154 -  ( 0,0)">Annex C7 – A detailed Guide to the Features and Function in SAP GL</a></li>
+<li> - <a title="155 -  ( 0,0)">Annex C8 – AC 210 – New General Ledger</a></li>
+<li> - <a title="156 -  ( 0,0)">Annex C9 – Segment reporting with Document Splitting in SAP GL</a></li>
+<li> - <a title="157 -  ( 0,-1)">Annex C10 – 2012-13 Dept lists with DFMS</a></li>
+</ul></div></li><!-- end div div25 -->
+<li> - <a title="158 -  ( 1,0)">Annex D: Enterprise Service Delivery</a></li>
+<li> - <a title="159 -  ( 0,0)">Annex E: Security</a></li>
+<li><a onclick="toggle_visibility('div26')"> + </a><a title="160 -  ( 0,1)">Annex F: SAP and HANA</a>
+<div class="clt" id="div26"><ul>
+<li> - <a title="161 -  ( -1,0)">Annex F1: SAP NetWeaver BW powered by HANA</a></li>
+<li> - <a title="162 -  ( 0,0)">Annex F2: How SAP NetWeaver BW running on HANA changes Business Processes</a></li>
+<li> - <a title="163 -  ( 0,0)">Annex F3: Virtualizing SAP HANA</a></li>
+<li> - <a title="164 -  ( 0,0)">Annex F4: SAP HANA virtualized roadmap</a></li>
+<li> - <a title="165 -  ( 0,0)">Annex F5: Fundamentals of SAP Business Suite powered by HANA</a></li>
+<li> - <a title="166 -  ( 0,0)">Annex F6: SAP HANA Finance Fact book</a></li>
+<li> - <a title="167 -  ( 0,-1)">Annex F7 – SAP HANA Financials for Public Sector RDS</a></li>
+</ul></div></li><!-- end div div26 -->
+<li><a onclick="toggle_visibility('div27')"> + </a><a title="168 -  ( 1,1)">Annex G : Management reports</a>
+<div class="clt" id="div27"><ul>
+<li> - <a title="169 -  ( -1,0)">Annex G1: Public Safety – Audit of Financial Planning, Forecasting & Monitoring</a></li>
+<li> - <a title="170 -  ( 0,0)">Annex G2: Proactive management of Reporting Obligations</a></li>
+<li> - <a title="171 -  ( 0,-1)">Annex G3 - STRENGTHENING PARLIAMENTARY SCRUTINY OF ESTIMATES AND SUPPLY</a></li>
+</ul></div></li><!-- end div div27 -->
+<li><a onclick="toggle_visibility('div28')"> + </a><a title="172 -  ( 1,1)">Annex H – Data Management & TIM</a>
+<div class="clt" id="div28"><ul>
+<li> - <a title="173 -  ( -1,0)">Annex H1: The Power of Common Business Language</a></li>
+<li> - <a title="174 -  ( 0,0)">Annex H2 – Master Data Governance – SAP</a></li>
+<li> - <a title="175 -  ( 0,0)">Annex H3: TIM 101</a></li>
+<li> - <a title="176 -  ( 0,0)">Annex H4: Master Data Work Group Session 1</a></li>
+<li> - <a title="177 -  ( 0,0)">Annex H5: Financial Coding block Workshop</a></li>
+<li> - <a title="178 -  ( 0,-1)">Annex H6 – Understanding Chart of Accounts</a></li>
+</ul></div></li><!-- end div div28 -->
+<li><a onclick="toggle_visibility('div29')"> + </a><a title="179 -  ( 1,1)">Annex I: Lunch and Learn</a>
+<div class="clt" id="div29"><ul>
+<li> - <a title="180 -  ( -1,0)">Annex I1: Way forward</a></li>
+<li> - <a title="181 -  ( 0,0)">Annex I2: Business/Service Modeling</a></li>
+<li> - <a title="182 -  ( 0,0)">Annex I3: Build Approach</a></li>
+<li> - <a title="183 -  ( 0,-1)">Annex I4: FMT Enterprise  Architecture</a></li>
+</ul></div></li><!-- end div div29 -->
+<li><a onclick="toggle_visibility('div30')"> + </a><a title="184 -  ( 1,1)">Figures</a>
+<div class="clt" id="div30"><ul>
+<li> - <a title="185 -  ( -1,0)">Figure 1: Architecture and the build streams</a></li>
+<li> - <a title="186 -  ( 0,0)">Figure 2: GC Definition of ERP</a></li>
+<li> - <a title="187 -  ( 0,0)">Figure 3: Balancing Cost Requirements and Schedule</a></li>
+<li> - <a title="188 -  ( 0,0)">Figure 4: Business Design Development Approach</a></li>
+<li> - <a title="189 -  ( 0,0)">Figure 5: Information Maturity Model</a></li>
+<li> - <a title="190 -  ( 0,0)">Figure 6: Misuse of item numbers</a></li>
+<li> - <a title="191 -  ( 0,0)">Figure 7: The 3 streams</a></li>
+<li> - <a title="192 -  ( 0,0)">Figure 8: What is an ERP?</a></li>
+<li> - <a title="193 -  ( 0,0)">Figure 9: Financial reporting today</a></li>
+<li> - <a title="194 -  ( 0,0)">Figure 10: 3 Fronts Approach</a></li>
+<li> - <a title="195 -  ( 0,0)">Figure 11: Reporting from Transactional Data</a></li>
+<li> - <a title="196 -  ( 0,0)">Figure 12: Target-State ERA Model</a></li>
+<li> - <a title="197 -  ( 0,0)">Figure 13: HANA based systems</a></li>
+<li> - <a title="198 -  ( 0,0)">Figure 14: Conceptual Model of Financial Information</a></li>
+<li> - <a title="199 -  ( 0,0)">Figure 15 : Conceptual Financial Management Organizational Model</a></li>
+<li> - <a title="200 -  ( 0,0)">Figure 16: Conceptual Layout of Financial Management Systems</a></li>
+<li> - <a title="201 -  ( 0,0)">Figure 17: Conceptual Model of Resource and FM Functions Supported by DFMS</a></li>
+<li> - <a title="202 -  ( 0,0)">Figure 18: Financial Management Resources by Process Areas</a></li>
+<li> - <a title="203 -  ( 0,0)">Figure 19: Functional Back-Office Perspectives</a></li>
+<li> - <a title="204 -  ( 0,0)">Figure 20: Enterprise Management Perspective</a></li>
+<li> - <a title="205 -  ( 0,0)">Figure 21: DFMS Platforms and Instances (relative circle sizes based on department size)</a></li>
+<li> - <a title="206 -  ( 0,0)">Figure 22: FMT Approach</a></li>
+<li> - <a title="207 -  ( 0,0)">Figure 23: Business Design Development Approach</a></li>
+<li> - <a title="208 -  ( 0,0)">Figure 24: Business Process Validation</a></li>
+<li> - <a title="209 -  ( 0,0)">Figure 25: Business Design Process</a></li>
+<li> - <a title="210 -  ( 0,0)">Figure 26: The balance for requirements triage</a></li>
+<li> - <a title="211 -  ( 0,0)">Figure 27: Requirements Management Repository</a></li>
+<li> - <a title="212 -  ( 0,0)">Figure 28: Release and version strategy</a></li>
+<li> - <a title="213 -  ( 0,0)">Figure 29: On-boarding to a release</a></li>
+<li> - <a title="214 -  ( 0,0)">Figure 30: Consolidation ROI</a></li>
+<li> - <a title="215 -  ( 0,0)">Figure 31: Potential Improvement in Financial Management Costs Metrics</a></li>
+<li> - <a title="216 -  ( 0,0)">Figure 32: Federation ROI</a></li>
+<li> - <a title="217 -  ( 0,0)">Figure 33: Hybrid Consolidation - Federation</a></li>
+<li> - <a title="218 -  ( 0,0)">Figure 34: Hybrid Consolidation - Federation - CFBL model</a></li>
+<li> - <a title="219 -  ( 0,0)">Figure 35: Data vs Information</a></li>
+<li> - <a title="220 -  ( 0,0)">Figure 36: three level architecture, by the ANSI/X3/SPARC 1975</a></li>
+<li> - <a title="221 -  ( 0,0)">Figure 37: ER&A Architecture Model</a></li>
+<li> - <a title="222 -  ( 0,0)">Figure 38: High Level Solution Architecture View</a></li>
+<li> - <a title="223 -  ( 0,0)">Figure 39: Architecture and the build streams</a></li>
+<li> - <a title="224 -  ( 0,0)">Figure 40: How does it all fit?</a></li>
+<li> - <a title="225 -  ( 0,0)">Figure 41: FMT Streams</a></li>
+<li> - <a title="226 -  ( 0,0)">Figure 42: Reporting efficiency</a></li>
+<li> - <a title="227 -  ( 0,0)">Figure 43: Information Maturity Model</a></li>
+<li> - <a title="228 -  ( 0,0)">Figure 44: Possible Information Governance Structure</a></li>
+<li> - <a title="229 -  ( 0,0)">Figure 45: The Role of information</a></li>
+<li> - <a title="230 -  ( 0,0)">Figure 46: Misuse of item numbers</a></li>
+<li> - <a title="231 -  ( 0,0)">Figure 47 : Relationship of Data and Information</a></li>
+<li> - <a title="232 -  ( 0,0)">Figure 48:  Electoral Area - AS-IS</a></li>
+<li> - <a title="233 -  ( 0,0)">Figure 49: Electoral Area - SHOULD-BE</a></li>
+<li> - <a title="234 -  ( 0,0)">Figure 50: Fighting the needle in the hay stack</a></li>
+<li> - <a title="235 -  ( 0,0)">Figure 51: Single Authoritative Source</a></li>
+<li> - <a title="236 -  ( 0,0)">Figure 52: Harmonize and "Appear As One"</a></li>
+<li> - <a title="237 -  ( 0,0)">Figure 53: Financial Savings vs TIM adoption</a></li>
+<li> - <a title="238 -  ( 0,0)">Figure 54: How many cars?</a></li>
+<li> - <a title="239 -  ( 0,0)">Figure 55: Setting up TAS</a></li>
+<li> - <a title="240 -  ( 0,0)">Figure 56: Transformation Application Services</a></li>
+<li> - <a title="241 -  ( 0,0)">Figure 57 - TAS Component Overview</a></li>
+<li> - <a title="242 -  ( 0,0)">Figure 58: High Level TAS Architecture</a></li>
+<li> - <a title="243 -  ( 0,0)">Figure 59: Typical vs recommended timeline</a></li>
+<li> - <a title="244 -  ( 0,0)">Figure 60: TAS for migration</a></li>
+<li> - <a title="245 -  ( 0,0)">Figure 61: Data consolidation flow</a></li>
+<li> - <a title="246 -  ( 0,0)">Figure 62: Federated Use Case</a></li>
+<li> - <a title="247 -  ( 0,0)">Figure 63: Data Management Capabilities</a></li>
+<li> - <a title="248 -  ( 0,0)">Figure 64: Proactive approach to data management</a></li>
+<li> - <a title="249 -  ( 0,0)">Figure 65 : Field mapping screen from SAP Data Services</a></li>
+<li> - <a title="250 -  ( 0,0)">Figure 66: TAS Transaction Data Enrichment</a></li>
+<li> - <a title="251 -  ( 0,0)">Figure 67: What is an ERP?</a></li>
+<li> - <a title="252 -  ( 0,0)">Figure 68: GC Definition of ERP</a></li>
+<li> - <a title="253 -  ( 0,0)">Figure 69: DFMS Platforms and Instances (circle sizes relative to department size)</a></li>
+<li> - <a title="254 -  ( 0,0)">Figure 70: Current GL implementation</a></li>
+<li> - <a title="255 -  ( 0,0)">Figure 71: Getting a list of customised screens</a></li>
+<li> - <a title="256 -  ( 0,0)">Figure 72: Simple program to get the list of customized objects</a></li>
+<li> - <a title="257 -  ( 0,0)">Figure 73: Instance customisation grid</a></li>
+<li> - <a title="258 -  ( 0,0)">Figure 74: Financial closing process</a></li>
+<li> - <a title="259 -  ( 0,0)">Figure 75: Document Splitting</a></li>
+<li> - <a title="260 -  ( 0,0)">Figure 76: New GL</a></li>
+<li> - <a title="261 -  ( 0,0)">Figure 77: Why a green field?</a></li>
+<li> - <a title="262 -  ( 0,0)">Figure 78: Enterprise Structure</a></li>
+<li> - <a title="263 -  ( 0,0)">Figure 79: Data within its context</a></li>
+<li> - <a title="264 -  ( 0,0)">Figure 80: SAP Current version maintenance</a></li>
+<li> - <a title="265 -  ( 0,0)">Figure 81: Removing index tables</a></li>
+<li> - <a title="266 -  ( 0,0)">Figure 82: Invoice and Goods receipt Reconciliation</a></li>
+<li> - <a title="267 -  ( 0,0)">Figure 83: Financial reporting today</a></li>
+<li> - <a title="268 -  ( 0,0)">Figure 84: Ad-hoc reporting</a></li>
+<li> - <a title="269 -  ( 0,0)">Figure 85: 3 Fronts Approach</a></li>
+<li> - <a title="270 -  ( 0,0)">Figure 86: FMT Reporting concept</a></li>
+<li> - <a title="271 -  ( 0,0)">Figure 87: Hybrid Consolidation - Federation - CFBL model</a></li>
+<li> - <a title="272 -  ( 0,0)">Figure 88: TIM and TAS</a></li>
+<li> - <a title="273 -  ( 0,0)">Figure 89: Setting up TAS</a></li>
+<li> - <a title="274 -  ( 0,0)">Figure 90: Target-State Enterprise Reporting and Analytics Model</a></li>
+<li> - <a title="275 -  ( 0,0)">Figure 91: Simplified view of ERP with Business Warehouse</a></li>
+<li> - <a title="276 -  ( 0,0)">Figure 92: BW to BW on HANA</a></li>
+<li> - <a title="277 -  ( 0,0)">Figure 93: HANA Pushing calculation to the database</a></li>
+<li> - <a title="278 -  ( 0,0)">Figure 94: ERP and BW on HANA</a></li>
+<li> - <a title="279 -  ( 0,0)">Figure 95: GC wide BW on HANA</a></li>
+<li> - <a title="280 -  ( 0,0)">Figure 96: SFT simplified view</a></li>
+<li> - <a title="281 -  ( 0,0)">Figure 97: SFT Replacement</a></li>
+<li> - <a title="282 -  ( 0,0)">Figure 98: Target-State Enterprise Service Delivery Model</a></li>
+<li> - <a title="283 -  ( 0,0)">Figure 99: SAP influence channels</a></li>
+<li> - <a title="284 -  ( 0,0)">Figure 100: SAP SImple Finance for Public Sector</a></li>
+<li> - <a title="285 -  ( 0,0)">Figure 101: Co-innovation with SAP: Process overview</a></li>
+<li> - <a title="286 -  ( 0,0)">Figure 102: SAP Co-innovation Customer typical activites</a></li>
+<li> - <a title="287 -  ( 0,0)">Figure 103: 360° Security Architecture</a></li>
+<li> - <a title="288 -  ( 0,0)">Figure 104: Security application map</a></li>
+<li> - <a title="289 -  ( 0,0)">Figure 105: SAP Single Sign-on</a></li>
+<li> - <a title="290 -  ( 0,0)">Figure 106: Composition of the business roles</a></li>
+<li> - <a title="291 -  ( 0,0)">Figure 107: SAP Business Rule Framework</a></li>
+<li> - <a title="292 -  ( 0,0)">Figure 108: SAP Decision Service Manager</a></li>
+<li> - <a title="293 -  ( 0,0)">Figure 109: Continous Control  Monitoring</a></li>
+<li> - <a title="294 -  ( 0,0)">Figure 110: SAP Solution Manager</a></li>
+<li> - <a title="295 -  ( 0,0)">Figure 111 Electoral Area - SHOULD-BE</a></li>
+<li> - <a title="296 -  ( 0,0)">Figure 112: Six levels of Information Model</a></li>
+<li> - <a title="297 -  ( 0,0)">Figure 113 – TAS Simplified Overview</a></li>
+<li> - <a title="298 -  ( 0,-1)">Figure 98: Target-State Enterprise Service Delivery Model</a></li>
+</ul></div></li><!-- end div div30 -->
+<li><a onclick="toggle_visibility('div31')"> + </a><a title="299 -  ( 1,1)">Tables</a>
+<div class="clt" id="div31"><ul>
+<li> - <a title="300 -  ( -1,0)">Tableau 1: Common Financial Business Processes (FM-BP)</a></li>
+<li> - <a title="301 -  ( 0,0)">Tableau 2: Typical Model of CFO Organisation</a></li>
+<li> - <a title="302 -  ( 0,0)">Tableau 3: Information Governance Maturity Levels</a></li>
+<li> - <a title="303 -  ( 0,-1)">Tableau 4: Sample of duplicated vendors</a></li>
+</div></ul>
+</body></html>
+
